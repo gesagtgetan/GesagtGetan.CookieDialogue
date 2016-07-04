@@ -1,0 +1,35 @@
+prototype(GesagtGetan:DefaultPage) {
+	/*
+	use this if you don't need inline CSS
+	head {
+		stylesheets {
+			cookieDialogueStylesheets = TYPO3.TypoScript:Tag {
+				tagName = 'link'
+				attributes {
+					rel = 'stylesheet'
+					href = TYPO3.TypoScript:ResourceUri {
+						path = 'resource://GesagtGetan.CookieDialogue/Public/Styles/style.css'
+					}
+				}
+			}
+		}
+	}
+	*/
+
+	cookieDialogue = TYPO3.TypoScript:Template  {
+		@position = 'after bodyTag'
+		javascript = TYPO3.TypoScript:Template  {
+			sectionName ='javaScript'
+			templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/Includes/JavaScript.html'
+		}
+		css = TYPO3.TypoScript:Template  {
+			sectionName = 'stylesheets'
+			templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/Includes/Stylesheets.html'
+		}
+
+		templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
+	}
+
+
+
+}

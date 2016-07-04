@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" source-language="en" target-language="de" datatype="plaintext">
+    <body>
+       <trans-unit id="txtCookieDialogue1">
+          <target>This website uses cookies.</target>
+      </trans-unit>
+	  <trans-unit id="txtCookieDialogueLink">
+			<target>Details about the use of cookies.</target>
+	  </trans-unit>
+	  <trans-unit id="txtCookieDialogue2">
+			<target>With the continued use of our website you consent to our use of cookies.</target>
+	  </trans-unit>
+	  <trans-unit id="btnCookieDialogue">
+			<target>Accept</target>
+	  </trans-unit>
+    </body>
+  </file>
+</xliff>
