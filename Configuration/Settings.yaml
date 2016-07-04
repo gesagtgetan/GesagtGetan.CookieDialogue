@@ -5,4 +5,4 @@ TYPO3:
         'GesagtGetan.CookieDialogue': TRUE
 GesagtGetan:
   CookieDialogue:
-    imprintNodePath: '/sites/snowsocietycom/node-566a02971a881'
+    imprintNodePath: '/sites/sitepackage/nodename'

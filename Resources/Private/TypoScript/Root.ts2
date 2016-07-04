@@ -29,7 +29,4 @@ prototype(GesagtGetan:DefaultPage) {
 
 		templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
 	}
-
-
-
 }
