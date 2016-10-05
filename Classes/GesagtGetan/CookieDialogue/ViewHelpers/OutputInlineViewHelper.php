@@ -16,6 +16,6 @@ class OutputInlineViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHe
 
     public function render()
     {
-        return file_get_contents(FLOW_PATH_WEB . $this->arguments['filePath']);
+        return file_get_contents(FLOW_PATH_ROOT . $this->arguments['filePath']);
     }
 }
