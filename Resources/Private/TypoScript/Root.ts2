@@ -1,4 +1,4 @@
-prototype(Page) {
+prototype(GesagtGetan:DefaultPage) {
 	/*
 	use this if you don't need inline CSS
 	head {
