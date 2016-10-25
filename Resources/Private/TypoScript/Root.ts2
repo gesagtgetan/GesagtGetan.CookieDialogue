@@ -1,4 +1,4 @@
-prototype(GesagtGetan:DefaultPage) {
+prototype(TYPO3.Neos:Page) {
 	/*
 	use this if you don't need inline CSS
 	head {
