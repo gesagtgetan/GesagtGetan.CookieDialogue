@@ -1,15 +1,15 @@
 prototype(TYPO3.Neos:Page) {
-	cookieDialogue = TYPO3.TypoScript:Template  {
-		@position = 'before closingBodyTag'
-		javascript = TYPO3.TypoScript:Template  {
-			sectionName ='javaScript'
-			templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/Includes/JavaScript.html'
-		}
-		css = TYPO3.TypoScript:Template  {
-			sectionName = 'stylesheets'
-			templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/Includes/Stylesheets.html'
-		}
+    cookieDialogue = TYPO3.TypoScript:Template  {
+        @position = 'before closingBodyTag'
+        javascript = TYPO3.TypoScript:Template  {
+            sectionName ='javaScript'
+            templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/Includes/JavaScript.html'
+        }
+        css = TYPO3.TypoScript:Template  {
+            sectionName = 'stylesheets'
+            templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/Includes/Stylesheets.html'
+        }
 
-		templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
-	}
+        templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
+    }
 }
