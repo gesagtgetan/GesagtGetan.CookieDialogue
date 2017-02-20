@@ -13,11 +13,12 @@ $cookie-dialogue-button-hover-background: #fff !default;
   font-size: 12px;
   left: 0;
   line-height: 1.4;
-  padding: 10px 5px 12px;
+  padding: 12px 5px;
   position: fixed;
   text-align: center;
   transform: translateY(110%);
   transition: transform .5s cubic-bezier(.165, .84, .44, 1);
+  user-select: none;
   width: 100%;
   z-index: 10050;
 
@@ -38,11 +39,10 @@ $cookie-dialogue-button-hover-background: #fff !default;
   .accept {
     background: $cookie-dialogue-button-background;
     border: 1px solid $cookie-dialogue-button-border-color;
-    display: block;
+    display: inline-block;
     margin: 10px auto 0;
-    padding: 5px;
+    padding: 5px 24px;
     text-decoration: none;
-    width: 130px;
 
     &:focus,
     &:hover {

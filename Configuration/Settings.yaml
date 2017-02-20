@@ -6,4 +6,4 @@ TYPO3:
 
 GesagtGetan:
   CookieDialogue:
-    imprintNodePath: '/sites/sitepackage/nodename'
+    findQuery: '[instanceof GesagtGetan.Basic:Imprint]'
