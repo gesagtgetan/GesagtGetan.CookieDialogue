@@ -1,14 +1,22 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace gg=GesagtGetan\CookieDialogue\ViewHelpers}
-    <div class="cookieDialogue">
-    <span>
-        <f:translate package="GesagtGetan.CookieDialogue" id="txtCookieDialogue1">Diese Webseite verwendet Cookies.</f:translate>
-            <neos:link.node node="{gg:ImprintUri()}"><f:translate package="GesagtGetan.CookieDialogue" id="txtCookieDialogueLink">Details zur Cookie-Verwendung</f:translate></neos:link.node>. <br />
-            <f:translate package="GesagtGetan.CookieDialogue" id="txtCookieDialogue2">Durch die weitere Nutzung unserer Webseite stimmen Sie der Verwendung von Cookies zu.</f:translate>
-    </span>
-    <a class="accept">
-        <f:translate package="GesagtGetan.CookieDialogue" id="btnCookieDialogue">Akzeptieren</f:translate>
-    </a>
+<div class="cookie-dialogue">
+  <span>
+    <f:translate package="GesagtGetan.CookieDialogue" id="txtCookieDialogue1">Diese Webseite verwendet Cookies.</f:translate>
+    <neos:link.node node="{gg:ImprintUri()}"><f:translate package="GesagtGetan.CookieDialogue" id="txtCookieDialogueLink">Details zur Cookie-Verwendung</f:translate></neos:link.node>. <br />
+    <f:translate package="GesagtGetan.CookieDialogue" id="txtCookieDialogue2">Durch die weitere Nutzung unserer Webseite stimmen Sie der Verwendung von Cookies zu.</f:translate>
+  </span>
+  <a class="accept">
+    <f:translate package="GesagtGetan.CookieDialogue" id="btnCookieDialogue">Akzeptieren</f:translate>
+  </a>
+  <style>
+    <f:format.raw>
+      <gg:OutputInline filePath="Packages/Plugins/GesagtGetan.CookieDialogue/Resources/Public/Main.css"></gg:OutputInline>
+    </f:format.raw>
+  </style>
+  <script>
+    <f:format.raw>
+      <gg:OutputInline filePath="Packages/Plugins/GesagtGetan.CookieDialogue/Resources/Public/Main.js"></gg:OutputInline>
+    </f:format.raw>
+  </script>
 </div>
-{javascript -> f:format.raw()}
-{css -> f:format.raw()}

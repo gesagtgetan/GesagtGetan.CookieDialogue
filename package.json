@@ -1,23 +1,19 @@
 {
   "name": "GesagtGetan.CookieDialogue",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "js": "uglifyjs2 Resources/Private/Component/Main.js --mangle --compress --output Resources/Public/Main.js",
+    "css": "node-sass Resources/Private/Component/Main.scss Resources/Public/Main.css | cssnano Resources/Public/Main.css Resources/Public/Main.css  --autoprefixer.add true --autoprefixer.browsers: '> 1%' --no-zindex --discardComments.removeAll true ",
+    "start": "yarn run css && yarn run js",
+    "postinstall": "yarn start"
   },
-  "author": "",
+  "author": "Jon Uhlmann",
   "license": "ISC",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "js-cookie": "^2.1.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "es6-promise": "^3.1.2",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-minify": "0.0.7",
-    "gulp-sass": "^2.2.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "webpack": "^1.13.0",
-    "webpack-stream": "^3.1.0"
+    "cssnano-cli": "latest",
+    "node-sass": "latest",
+    "uglify-js2": "latest"
   }
 }

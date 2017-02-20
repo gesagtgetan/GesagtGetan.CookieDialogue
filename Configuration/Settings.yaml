@@ -2,7 +2,8 @@ TYPO3:
   Neos:
     typoScript:
       autoInclude:
-        'GesagtGetan.CookieDialogue': TRUE
+        'GesagtGetan.CookieDialogue': true
+
 GesagtGetan:
   CookieDialogue:
     imprintNodePath: '/sites/sitepackage/nodename'

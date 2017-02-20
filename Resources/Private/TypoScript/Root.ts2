@@ -1,15 +1,9 @@
-prototype(TYPO3.Neos:Page) {
-    cookieDialogue = TYPO3.TypoScript:Template  {
-        @position = 'before closingBodyTag'
-        javascript = TYPO3.TypoScript:Template  {
-            sectionName ='javaScript'
-            templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/Includes/JavaScript.html'
-        }
-        css = TYPO3.TypoScript:Template  {
-            sectionName = 'stylesheets'
-            templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/Includes/Stylesheets.html'
-        }
+prototype(GesagtGetan.CookieDialogue:Template) < prototype(TYPO3.TypoScript:Template) {
+  @position = 'before closingBodyTag'
+  templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
+  @if.onlyInFrontend = ${node.context.live}
+}
 
-        templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
-    }
+prototype(Page) {
+  cookieDialogue = GesagtGetan.CookieDialogue:Template
 }

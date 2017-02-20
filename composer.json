@@ -8,14 +8,20 @@
             "email": "gerhard.boden@gesagt-getan.at.de",
             "homepage": "https://www.gesagt-getan.at",
             "role": "Developer"
+        },
+        {
+            "name": "Jon Uhlmann",
+            "email": "jon.uhlmann@gesagt-getan.at.de",
+            "homepage": "https://www.gesagt-getan.at",
+            "role": "Developer"
         }
     ],
     "require": {
         "typo3/flow": "*"
     },
     "autoload": {
-        "psr-0": {
-            "GesagtGetan\\CookieDialogue": "Classes"
+        "psr-4": {
+            "GesagtGetan\\CookieDialogue\\": "Classes"
         }
     }
 }
