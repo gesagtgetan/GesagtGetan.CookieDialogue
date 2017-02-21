@@ -12,13 +12,16 @@ GesagtGetan:
 ```
 
 If the plugin doesn't include the [markup](Resources/Private/Templates/CookieDialogue.html) you have to add this line of code to your document prototype:  
-`cookieDialogue = GesagtGetan.CookieDialogue:Template`
+
+`YourPageObject.body.@process.addCookieDialogue = GesagtGetan.CookieDialogue:Process`
 
 **Example:**
 
 ```
 prototype(Your.Package:DocumentNodeType) {
-  cookieDialogue = GesagtGetan.CookieDialogue:Template
+  body {
+    @process.addCookieDialogue = GesagtGetan.CookieDialogue:Process`
+  }
 }
 ```
 
