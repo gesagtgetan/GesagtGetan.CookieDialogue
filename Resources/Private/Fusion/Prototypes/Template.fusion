@@ -1,0 +1,27 @@
+// Namespaces are defined in the Root.fusion file
+
+prototype(C:Template) < prototype(F:Template) {
+	templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
+	@if.onlyInFrontend = ${node.context.live}
+
+	findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
+	enabled = ${this.findQuery ? true : false}
+
+	@context {
+		imprintNode = ${q(site).find(this.findQuery).get(0)}
+		enabled = ${this.enabled}
+	}
+
+	uriToImprint = NodeUri {
+		@if.isEnabled = ${enabled}
+		node = ${imprintNode}
+	}
+
+	style = C:Tag {
+		tagName = 'style'
+	}
+
+	javascript = C:Tag {
+		tagName = 'script'
+	}
+}

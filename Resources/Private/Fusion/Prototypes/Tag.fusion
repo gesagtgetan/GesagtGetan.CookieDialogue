@@ -1,0 +1,12 @@
+// Namespaces are defined in the Root.fusion file
+
+prototype(C:Tag) < prototype(F:Tag) {
+	tagName = 'script'
+	file = ${'resource://GesagtGetan.CookieDialogue/Public/Main.' + (this.tagName == 'script' ? 'js' : 'css')}
+	@context.file = ${this.file}
+	@if.file = ${!!this.file}
+
+	content = C:FileContent {
+		path = ${file}
+	}
+}
