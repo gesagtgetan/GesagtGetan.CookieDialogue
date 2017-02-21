@@ -1,25 +1,24 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace gg=GesagtGetan\CookieDialogue\ViewHelpers}
 
 <div class="cookie-dialogue">
-  <f:translate package="GesagtGetan.CookieDialogue" id="txtCookieDialogue1">Diese Webseite verwendet Cookies.</f:translate>
-  <f:if condition="{uriToImprint}">
-    <a href="{uriToImprint}"><f:translate package="GesagtGetan.CookieDialogue" id="txtCookieDialogueLink">Details zur Cookie-Verwendung</f:translate></a>
-  </f:if>
-  <br>
-  <f:translate package="GesagtGetan.CookieDialogue" id="txtCookieDialogue2">Durch die weitere Nutzung unserer Webseite stimmen Sie der Verwendung von Cookies zu.</f:translate>
-  <br>
-  <a class="accept">
-    <f:translate package="GesagtGetan.CookieDialogue" id="btnCookieDialogue">Akzeptieren</f:translate>
-  </a>
-  <style>
-    <f:format.raw>
-      <gg:OutputInline filePath="Packages/Plugins/GesagtGetan.CookieDialogue/Resources/Public/Main.css"></gg:OutputInline>
-    </f:format.raw>
-  </style>
-  <script>
-    <f:format.raw>
-      <gg:OutputInline filePath="Packages/Plugins/GesagtGetan.CookieDialogue/Resources/Public/Main.js"></gg:OutputInline>
-    </f:format.raw>
-  </script>
+	<f:translate package="GesagtGetan.CookieDialogue" id="siteUseCookies" />
+	<f:if condition="{uriToImprint}">
+		<a href="{uriToImprint}"><f:translate package="GesagtGetan.CookieDialogue" id="cookieDetails" /></a>
+	</f:if>
+	<br>
+	<f:translate package="GesagtGetan.CookieDialogue" id="youWillAcceptCookiesWithFurtherUse" />
+	<br>
+	<button type="button" class="accept">
+		<f:translate package="GesagtGetan.CookieDialogue" id="button" />
+	</button>
+	<style>
+		<f:format.raw>
+			<gg:OutputInline filePath="Packages/Plugins/GesagtGetan.CookieDialogue/Resources/Public/Main.css"></gg:OutputInline>
+		</f:format.raw>
+	</style>
+	<script>
+		<f:format.raw>
+			<gg:OutputInline filePath="Packages/Plugins/GesagtGetan.CookieDialogue/Resources/Public/Main.js"></gg:OutputInline>
+		</f:format.raw>
+	</script>
 </div>
