@@ -20,7 +20,7 @@ If the plugin doesn't include the [markup](Resources/Private/Templates/CookieDia
 ```
 prototype(Your.Package:DocumentNodeType) {
   body {
-    @process.addCookieDialogue = GesagtGetan.CookieDialogue:Process`
+    @process.addCookieDialogue = GesagtGetan.CookieDialogue:Process
   }
 }
 ```
