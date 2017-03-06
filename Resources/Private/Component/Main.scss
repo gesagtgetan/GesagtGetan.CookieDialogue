@@ -22,11 +22,11 @@ $cookie-dialogue-button-hover-background: #fff !default;
 	width: 100%;
 	z-index: 10050;
 
-	&.visible {
+	&.-visible {
 		transform: translateY(0);
 	}
 
-	a {
+	> a {
 		color: $cookie-dialogue-button-color;
 		cursor: pointer;
 		text-decoration: underline;
@@ -36,7 +36,7 @@ $cookie-dialogue-button-hover-background: #fff !default;
 		}
 	}
 
-	.accept {
+	> .accept {
 		color: $cookie-dialogue-button-color;
 		cursor: pointer;
 		background: $cookie-dialogue-button-background;

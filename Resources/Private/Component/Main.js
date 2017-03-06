@@ -1,15 +1,15 @@
 (function() {
 	var daysToExpire = 3650;
-	var cookieName = 'cookiesAllowed'
-	var dialogSelector = '.cookie-dialogue';
-	var dialog = document.querySelector(dialogSelector);
+	var cookieName = 'cookiesAllowed';
+	var visibleClass = '-visible';
+	var dialog = document.querySelector('.cookie-dialogue');
 	var CookieDialogue = {
 		// check for cookie
 		checkCookie: function () {
 			if (CookieDialogue.getCookie() != '1') {
 				setTimeout(function () {
 					dialog.querySelector('.accept').onclick = CookieDialogue.accept;
-					dialog.classList.add('visible');
+					dialog.classList.add(visibleClass);
 				}, 500);
 			} else {
 				CookieDialogue.remove();
@@ -22,7 +22,7 @@
 
 		// accept cookie
 		accept: function () {
-			dialog.classList.remove('visible');
+			dialog.classList.remove(visibleClass);
 			setTimeout(CookieDialogue.remove, 500);
 			CookieDialogue.setCookie();
 			return false;
@@ -31,7 +31,7 @@
 		setCookie: function () {
 			try {
 				var date = new Date();
-				var expires = "expires=";
+				var expires = 'expires=';
 				date.setTime(date.getTime() + (daysToExpire * 86400000)); // 24 * 60 * 60 * 1000 = 86400000
 				expires += date.toUTCString();
 				document.cookie = cookieName + '=1;' + expires + ';path=/';
