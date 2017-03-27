@@ -5,15 +5,12 @@ prototype(C:Template) < prototype(F:Template) {
 	@if.onlyInFrontend = ${node.context.live}
 
 	findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
-	enabled = ${this.findQuery ? true : false}
+	imprintNode = ${q(site).find(this.findQuery).get(0)}
 
-	@context {
-		imprintNode = ${q(site).find(this.findQuery).get(0)}
-		enabled = ${this.enabled}
-	}
+	@context.imprintNode = ${this.imprintNode}
 
 	uriToImprint = NodeUri {
-		@if.isEnabled = ${enabled}
+		@if.isEnabled = ${imprintNode ? true : false}
 		node = ${imprintNode}
 	}
 
