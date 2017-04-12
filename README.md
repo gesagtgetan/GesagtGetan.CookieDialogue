@@ -25,4 +25,4 @@ prototype(Your.Package:DocumentNodeType) {
 }
 ```
 
-For advanced settings, take a look at the [Fusion file](Resources/Private/TypoScript/Root.ts2).
+For advanced settings, take a look at the [Fusion file](Resources/Private/Fusion/Root.ts2).
