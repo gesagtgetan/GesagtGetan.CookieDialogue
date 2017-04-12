@@ -1,5 +1,3 @@
 // Namespaces are defined in the Root.fusion file
 
-prototype(Page).body {
-	@process.addCookieDialogue = C:Process
-}
+prototype(Page).body.@process.addCookieDialogue = C:Process
