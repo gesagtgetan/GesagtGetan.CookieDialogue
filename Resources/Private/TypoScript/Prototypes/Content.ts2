@@ -1,0 +1,24 @@
+// Namespaces are defined in the Root.ts2 file
+
+prototype(C:Content) < prototype(F:Template) {
+	templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
+	@if.onlyInFrontend = ${node.context.live}
+
+	findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
+	imprintNode = ${q(site).find(this.findQuery).get(0)}
+
+	@context.imprintNode = ${this.imprintNode}
+
+	uriToImprint = NodeUri {
+		@if.isEnabled = ${imprintNode ? true : false}
+		node = ${imprintNode}
+	}
+
+	style = C:Tag {
+		tagName = 'style'
+	}
+
+	javascript = C:Tag {
+		tagName = 'script'
+	}
+}

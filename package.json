@@ -6,7 +6,8 @@
     "js": "uglifyjs2 Resources/Private/Component/Main.js --mangle --compress --output Resources/Public/Main.js",
     "css": "node-sass Resources/Private/Component/Main.scss Resources/Public/Main.css | cssnano Resources/Public/Main.css Resources/Public/Main.css  --autoprefixer.add true --autoprefixer.browsers: '> 1%' --no-zindex --discardComments.removeAll true ",
     "start": "yarn run css && yarn run js",
-    "postinstall": "yarn start"
+    "postinstall": "yarn start",
+    "rm": "rm -rf node_modules"
   },
   "author": "Jon Uhlmann",
   "license": "ISC",

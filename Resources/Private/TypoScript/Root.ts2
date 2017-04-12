@@ -1,22 +1,4 @@
-prototype(GesagtGetan.CookieDialogue:Template) < prototype(TYPO3.TypoScript:Template) {
-  @position = 'before closingBodyTag'
-  templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
-  @if.onlyInFrontend = ${node.context.live}
+namespace: F = TYPO3.TypoScript
+namespace: C = GesagtGetan.CookieDialogue
 
-  findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
-  enabled = ${this.findQuery ? true : false}
-
-  @context {
-    imprintNode = ${q(site).find(this.findQuery).get(0)}
-    enabled = ${this.enabled}
-  }
-
-  uriToImprint = NodeUri {
-    @if.isEnabled = ${enabled}
-    node = ${imprintNode}
-  }
-}
-
-prototype(Page) {
-  cookieDialogue = GesagtGetan.CookieDialogue:Template
-}
+include: Prototypes/**/*.ts2
