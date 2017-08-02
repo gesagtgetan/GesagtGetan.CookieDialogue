@@ -7,7 +7,7 @@ Simple cookie dialogue plugin. There's one Fusion prototype available: `GesagtGe
 
 `composer require gesagtgetan/cookiedialogue --no-update`
 
-  Go to your side package in Neos f.e. Packages/Sites/GesagtGetan.Test
+  Go to your site package in Neos f.e. Packages/Sites/GesagtGetan.Test
   
 `composer update`
 
