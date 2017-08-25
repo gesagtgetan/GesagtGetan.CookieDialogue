@@ -5,7 +5,7 @@ prototype(C:Template) < prototype(F:Template) {
 	@if.onlyInFrontend = ${node.context.live}
 
 	findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
-	imprintNode = ${q(site).find(this.findQuery).get(0)}
+	imprintNode = ${q(site).find('[instanceof Neos.Neos:Document]').filter(this.findQuery).get(0)}
 
 	@context.imprintNode = ${this.imprintNode}
 
