@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file original="" product-name="GesagtGetan.CookieDialogue" source-language="en" datatype="plaintext">
-		<body>
-			<trans-unit id="siteUseCookies" xml:space="preserve">
-				<source>This website uses cookies.</source>
-			</trans-unit>
-			<trans-unit id="cookieDetails" xml:space="preserve">
-				<source>Details about the use of cookies.</source>
-			</trans-unit>
-			<trans-unit id="youWillAcceptCookiesWithFurtherUse" xml:space="preserve">
-				<source>With the continued use of our website you consent to our use of cookies.</source>
-			</trans-unit>
-			<trans-unit id="button" xml:space="preserve">
-				<source>Accept</source>
-			</trans-unit>
-		</body>
-	</file>
+    <file original="" product-name="GesagtGetan.CookieDialogue" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="siteUseCookies" xml:space="preserve">
+                <source>This website uses cookies.</source>
+            </trans-unit>
+            <trans-unit id="cookieDetails" xml:space="preserve">
+                <source>Details about the use of cookies.</source>
+            </trans-unit>
+            <trans-unit id="youWillAcceptCookiesWithFurtherUse" xml:space="preserve">
+                <source>With the continued use of our website you consent to our use of cookies.</source>
+            </trans-unit>
+            <trans-unit id="button" xml:space="preserve">
+                <source>Accept</source>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

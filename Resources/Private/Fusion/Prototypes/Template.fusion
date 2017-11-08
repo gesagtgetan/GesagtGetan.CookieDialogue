@@ -1,24 +1,22 @@
-// Namespaces are defined in the Root.fusion file
+prototype(GesagtGetan.CookieDialogue:Template) < prototype(Neos.Fusion:Template) {
+    templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Fusion/Prototypes/Template.html'
+    @if.onlyInFrontend = ${node.context.live}
 
-prototype(C:Template) < prototype(F:Template) {
-	templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Templates/CookieDialogue.html'
-	@if.onlyInFrontend = ${node.context.live}
+    findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
+    imprintNode = ${q(site).find('[instanceof Neos.Neos:Document]').filter(this.findQuery).get(0)}
 
-	findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
-	imprintNode = ${q(site).find('[instanceof Neos.Neos:Document]').filter(this.findQuery).get(0)}
+    @context.imprintNode = ${this.imprintNode}
 
-	@context.imprintNode = ${this.imprintNode}
+    uriToImprint = NodeUri {
+        @if.isEnabled = ${imprintNode ? true : false}
+        node = ${imprintNode}
+    }
 
-	uriToImprint = NodeUri {
-		@if.isEnabled = ${imprintNode ? true : false}
-		node = ${imprintNode}
-	}
+    style = GesagtGetan.CookieDialogue:Tag {
+        tagName = 'style'
+    }
 
-	style = C:Tag {
-		tagName = 'style'
-	}
-
-	javascript = C:Tag {
-		tagName = 'script'
-	}
+    javascript = GesagtGetan.CookieDialogue:Tag {
+        tagName = 'script'
+    }
 }

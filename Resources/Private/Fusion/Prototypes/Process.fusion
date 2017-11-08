@@ -1,7 +1,0 @@
-// Namespaces are defined in the Root.fusion file
-
-prototype(C:Process) < prototype(F:Value) {
-	@position = 'end'
-	dialog = C:Template
-	value = ${value + this.dialog}
-}

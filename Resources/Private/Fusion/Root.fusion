@@ -1,4 +1,1 @@
-namespace: F = Neos.Fusion
-namespace: C = GesagtGetan.CookieDialogue
-
-include: Prototypes/**/*.fusion
+include: **/*.fusion

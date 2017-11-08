@@ -7,53 +7,53 @@ $cookie-dialogue-button-hover-color: #000 !default;
 $cookie-dialogue-button-hover-background: #fff !default;
 
 .cookie-dialogue {
-	background: rgba($cookie-dialogue-background, .7);
-	bottom: 0;
-	color: $cookie-dialogue-color;
-	font-size: 12px;
-	left: 0;
-	line-height: 1.4;
-	padding: 12px 5px;
-	position: fixed;
-	text-align: center;
-	transform: translateY(110%);
-	transition: transform .5s cubic-bezier(.165, .84, .44, 1);
-	user-select: none;
-	width: 100%;
-	z-index: 10050;
+  background: rgba($cookie-dialogue-background, 0.7);
+  bottom: 0;
+  color: $cookie-dialogue-color;
+  font-size: 12px;
+  left: 0;
+  line-height: 1.4;
+  padding: 12px 5px;
+  position: fixed;
+  text-align: center;
+  transform: translateY(110%);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  user-select: none;
+  width: 100%;
+  z-index: 10050;
 
-	&.-visible {
-		transform: translateY(0);
-	}
+  &.-visible {
+    transform: translateY(0);
+  }
 
-	> a {
-		color: $cookie-dialogue-button-color;
-		cursor: pointer;
-		text-decoration: underline;
+  > a {
+    color: $cookie-dialogue-button-color;
+    cursor: pointer;
+    text-decoration: underline;
 
-		&:hover {
-			text-decoration: none;
-		}
-	}
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
-	> .accept {
-		color: $cookie-dialogue-button-color;
-		cursor: pointer;
-		background: $cookie-dialogue-button-background;
-		border: 1px solid $cookie-dialogue-button-border-color;
-		display: inline-block;
-		margin: 10px auto 0;
-		padding: 5px 24px;
-		text-decoration: none;
+  > .accept {
+    color: $cookie-dialogue-button-color;
+    cursor: pointer;
+    background: $cookie-dialogue-button-background;
+    border: 1px solid $cookie-dialogue-button-border-color;
+    display: inline-block;
+    margin: 10px auto 0;
+    padding: 5px 24px;
+    text-decoration: none;
 
-		&:focus,
-		&:hover {
-			background: $cookie-dialogue-button-hover-background;
-			color: $cookie-dialogue-button-hover-color;
-		}
+    &:focus,
+    &:hover {
+      background: $cookie-dialogue-button-hover-background;
+      color: $cookie-dialogue-button-hover-color;
+    }
 
-		&:focus {
-			outline: none;
-		}
-	}
+    &:focus {
+      outline: none;
+    }
+  }
 }

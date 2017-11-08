@@ -1,7 +1,0 @@
-// Namespaces are defined in the Root.fusion file
-
-prototype(C:FileContent) < prototype(F:Value) {
-	@class = 'GesagtGetan\\CookieDialogue\\Fusion\\FileContentImplementation'
-	path = null
-	resource = null
-}
