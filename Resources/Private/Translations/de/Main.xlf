@@ -9,7 +9,7 @@
                 <source>Details zur Cookie-Verwendung</source>
             </trans-unit>
             <trans-unit id="youWillAcceptCookiesWithFurtherUse" xml:space="preserve">
-                <source>Durch die weitere Nutzung unserer Webseite stimmen Sie der Verwendung von Cookies zu.</source>
+                <source>Durch die weitere Nutzung der Webseite stimmen Sie der Verwendung von Cookies zu.</source>
             </trans-unit>
             <trans-unit id="button" xml:space="preserve">
                 <source>Akzeptieren</source>
