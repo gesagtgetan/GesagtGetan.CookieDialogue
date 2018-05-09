@@ -3,13 +3,13 @@
 	<file original="" product-name="GesagtGetan.CookieDialogue" source-language="de" datatype="plaintext">
 		<body>
 			<trans-unit id="siteUseCookies" xml:space="preserve">
-				<source>Diese Webseite verwendet Cookies.</source>
+				<source>Diese Seite verwendet Cookies, die für eine uneingeschränkte Nutzung der Website nötig sind. Detaillierte Informationen über den Einsatz von Cookies auf dieser Website finden Sie in der</source>
 			</trans-unit>
 			<trans-unit id="cookieDetails" xml:space="preserve">
-				<source>Details zur Cookie-Verwendung</source>
+				<source>Datenschutzerklärung.</source>
 			</trans-unit>
 			<trans-unit id="youWillAcceptCookiesWithFurtherUse" xml:space="preserve">
-				<source>Durch die weitere Nutzung unserer Webseite stimmen Sie der Verwendung von Cookies zu.</source>
+				<source> Dort kann auch der Verwendung von Cookies widersagt werden.</source>
 			</trans-unit>
 			<trans-unit id="button" xml:space="preserve">
 				<source>Akzeptieren</source>
