@@ -1,8 +1,14 @@
 <div class="cookie-dialogue">
 	<f:translate package="GesagtGetan.CookieDialogue" id="siteUseCookies" />
 	<f:if condition="{uriToImprint}">
-		<a href="{uriToImprint}"><f:translate package="GesagtGetan.CookieDialogue" id="cookieDetails" /></a>
+		<f:then>
+			<a href="{uriToImprint}"><f:translate package="GesagtGetan.CookieDialogue" id="cookieDetails" /></a>
+		</f:then>
+		<f:else>
+			<f:translate package="GesagtGetan.CookieDialogue" id="cookieDetails" />
+		</f:else>
 	</f:if>
+
 	<br>
 	<f:translate package="GesagtGetan.CookieDialogue" id="youWillAcceptCookiesWithFurtherUse" />
 	<br>
