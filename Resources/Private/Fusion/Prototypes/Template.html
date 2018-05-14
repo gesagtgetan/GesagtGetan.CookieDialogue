@@ -1,4 +1,5 @@
 <div class="cookie-dialogue">
+    {style -> f:format.raw()}
     <f:translate package="GesagtGetan.CookieDialogue" id="siteUseCookies" />
     <f:if condition="{uriToImprint}">
         <f:then>
@@ -14,6 +15,5 @@
     <button type="button" class="accept">
         <f:translate package="GesagtGetan.CookieDialogue" id="button" />
     </button>
-    {style -> f:format.raw()}
     {javascript -> f:format.raw()}
 </div>
