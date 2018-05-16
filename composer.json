@@ -20,7 +20,7 @@
         "exclude": [".editorconfig", ".gitignore", ".github", ".gitattributes", "yarn.lock", "package.json"]
     },
     "require": {
-        "neos/neos": "~3.0 || dev-master",
+        "neos/neos": "~3.0 || ~4.0",
         "carbon/filecontent": "^1.0"
     },
     "autoload": {

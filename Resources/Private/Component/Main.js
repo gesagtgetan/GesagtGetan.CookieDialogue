@@ -8,7 +8,7 @@
         checkCookie: function() {
             if (CookieDialogue.getCookie() != "1") {
                 setTimeout(function() {
-                    dialog.querySelector(".accept").onclick =
+                    dialog.querySelector("button").onclick =
                         CookieDialogue.accept;
                     dialog.classList.add(visibleClass);
                 }, 500);

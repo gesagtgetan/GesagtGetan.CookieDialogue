@@ -2,14 +2,8 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file original="" product-name="GesagtGetan.CookieDialogue" source-language="de" datatype="plaintext">
         <body>
-            <trans-unit id="siteUseCookies" xml:space="preserve">
-                <source>Diese Seite verwendet Cookies, die für eine uneingeschränkte Nutzung der Website nötig sind. Detaillierte Informationen über den Einsatz von Cookies auf dieser Website finden Sie in der</source>
-            </trans-unit>
-            <trans-unit id="cookieDetails" xml:space="preserve">
-                <source>Datenschutzerklärung.</source>
-            </trans-unit>
-            <trans-unit id="youWillAcceptCookiesWithFurtherUse" xml:space="preserve">
-                <source> Dort kann auch der Verwendung von Cookies widersagt werden.</source>
+            <trans-unit id="text" xml:space="preserve">
+                <source><![CDATA[Diese Seite verwendet Cookies, die für eine uneingeschränkte Nutzung der Website nötig sind. Detaillierte Informationen über den Einsatz von Cookies auf dieser Website finden Sie in der <a href="{link}">Datenschutzerklärung</a>. <br> Dort kann auch der Verwendung von Cookies widersagt werden.]]></source>
             </trans-unit>
             <trans-unit id="button" xml:space="preserve">
                 <source>Akzeptieren</source>

@@ -26,7 +26,7 @@ $cookie-dialogue-button-hover-background: #fff !default;
     transform: translateY(0);
   }
 
-  > a {
+  a {
     color: $cookie-dialogue-button-color;
     cursor: pointer;
     text-decoration: underline;
@@ -36,15 +36,21 @@ $cookie-dialogue-button-hover-background: #fff !default;
     }
   }
 
-  > .accept {
+  p {
+    margin: 0 auto 1em;
+    max-width: 50em;
+  }
+
+  button {
     color: $cookie-dialogue-button-color;
     cursor: pointer;
     background: $cookie-dialogue-button-background;
     border: 1px solid $cookie-dialogue-button-border-color;
     display: inline-block;
-    margin: 10px auto 0;
+    margin: 0 auto;
     padding: 5px 24px;
     text-decoration: none;
+    border-radius: 1px;
 
     &:focus,
     &:hover {

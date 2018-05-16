@@ -1,7 +1,8 @@
-prototype(Page).cookieDialogue = GesagtGetan.CookieDialogue:Template {
+prototype(Neos.Neos:Page).cookieDialogue = GesagtGetan.CookieDialogue:Template {
     @position = 'before closingBodyTag'
     //@if.hasCookie = ${request.httpRequest.cookies.cookiesAllowed && request.httpRequest.cookies.cookiesAllowed.value == '1' }
 }
+
 /*
 prototype(Neos.Fusion:GlobalCacheIdentifiers) {
   cookiesAllowed = ${(request.httpRequest.cookies.cookiesAllowed.value == '1')}

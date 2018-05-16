@@ -1,22 +1,32 @@
-prototype(GesagtGetan.CookieDialogue:Template) < prototype(Neos.Fusion:Template) {
-    templatePath = 'resource://GesagtGetan.CookieDialogue/Private/Fusion/Prototypes/Template.html'
+prototype(GesagtGetan.CookieDialogue:Template) < prototype(Neos.Fusion:Tag) {
     @if.onlyInFrontend = ${node.context.live}
 
     findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
-    imprintNode = ${q(site).find('[instanceof Neos.Neos:Document]').filter(this.findQuery).get(0)}
+    imprintNode = ${this.findQuery ? q(site).find('[instanceof Neos.Neos:Document]').filter(this.findQuery).get(0) : null}
 
     @context.imprintNode = ${this.imprintNode}
 
-    uriToImprint = NodeUri {
-        @if.isEnabled = ${imprintNode ? true : false}
-        node = ${imprintNode}
-    }
-
-    style = GesagtGetan.CookieDialogue:Tag {
-        tagName = 'style'
-    }
-
-    javascript = GesagtGetan.CookieDialogue:Tag {
-        tagName = 'script'
+    attributes.class = 'cookie-dialogue'
+    content = Neos.Fusion:Array {
+        @context.link = Neos.Neos:NodeUri {
+            @if.isEnabled = ${imprintNode ? true : false}
+            node = ${imprintNode}
+        }
+        style = GesagtGetan.CookieDialogue:Tag {
+            tagName = 'style'
+        }
+        text = Neos.Fusion:Tag {
+            tagName = 'p'
+            content = ${Translation.translate('text', null, {link:link}, null, 'GesagtGetan.CookieDialogue')}
+            content.@process.removeEmptyLink = ${link ? value : String.stripTags(value, '<br>')}
+        }
+        button = Neos.Fusion:Tag {
+            tagName = 'button'
+            attributes.type = 'button'
+            content = ${Translation.translate('button', null, [], null, 'GesagtGetan.CookieDialogue')}
+        }
+        javascript = GesagtGetan.CookieDialogue:Tag {
+            tagName = 'script'
+        }
     }
 }
