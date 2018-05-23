@@ -3,7 +3,7 @@
     <file original="" product-name="GesagtGetan.CookieDialogue" source-language="en" datatype="plaintext">
         <body>
             <trans-unit id="text" xml:space="preserve">
-                <source><![CDATA[This website uses cookies. <a href="{link}">Here you find details about the use of them.</a> <br> With the continued use of the website you consent to our use of cookies.]]></source>
+                <source><![CDATA[This website uses Cookies that are necessary for full use of the website. Detailed information about the use of Cookies on this website can be found in our <a href="{link}">data privacy policy</a>. <br> There, the use of Cookies can also be declined.]]></source>
             </trans-unit>
             <trans-unit id="button" xml:space="preserve">
                 <source>Accept</source>
