@@ -1,0 +1,5 @@
+/.gitattributes export-ignore
+/.github export-ignore
+/.editorconfig export-ignore
+/package.json export-ignore
+/yarn.lock export-ignore

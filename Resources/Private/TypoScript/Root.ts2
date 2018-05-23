@@ -1,4 +1,1 @@
-namespace: F = TYPO3.TypoScript
-namespace: C = GesagtGetan.CookieDialogue
-
-include: Prototypes/**/*.ts2
+include: **/*.ts2

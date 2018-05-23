@@ -11,10 +11,9 @@
   },
   "author": "Jon Uhlmann",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "cssnano-cli": "latest",
-    "node-sass": "latest",
-    "uglify-js2": "latest"
+  "dependencies": {
+    "cssnano-cli": "^1.0.5",
+    "node-sass": "^4.9.0",
+    "uglify-js2": "^2.1.11"
   }
 }

@@ -1,7 +1,5 @@
-// Namespaces are defined in the Root.ts2 file
-
-prototype(C:FileContent) < prototype(F:Value) {
-	@class = 'GesagtGetan\\CookieDialogue\\TypoScript\\FileContentImplementation'
-	path = null
-	resource = null
+prototype(GesagtGetan.CookieDialogue:FileContent) < prototype(TYPO3.TypoScript:Value) {
+  @class = 'GesagtGetan\\CookieDialogue\\TypoScript\\FileContentImplementation'
+  path = null
+  resource = null
 }

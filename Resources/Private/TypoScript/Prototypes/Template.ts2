@@ -1,0 +1,32 @@
+prototype(GesagtGetan.CookieDialogue:Template) < prototype(TYPO3.TypoScript:Tag) {
+    @if.onlyInFrontend = ${node.context.live}
+
+    findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
+    imprintNode = ${this.findQuery ? q(site).find('[instanceof TYPO3.Neos:Document]').filter(this.findQuery).get(0) : null}
+
+    @context.imprintNode = ${this.imprintNode}
+
+    attributes.class = 'cookie-dialogue'
+    content = TYPO3.TypoScript:Array {
+        @context.link = TYPO3.Neos:NodeUri {
+            @if.isEnabled = ${imprintNode ? true : false}
+            node = ${imprintNode}
+        }
+        style = GesagtGetan.CookieDialogue:Tag {
+            tagName = 'style'
+        }
+        text = TYPO3.TypoScript:Tag {
+            tagName = 'p'
+            content = ${Translation.translate('text', null, {link:link}, null, 'GesagtGetan.CookieDialogue')}
+            content.@process.removeEmptyLink = ${link ? value : String.replace(String.stripTags(String.replace(value, '<br>', '--br--')),'--br--', '<br>')}
+        }
+        button = TYPO3.TypoScript:Tag {
+            tagName = 'button'
+            attributes.type = 'button'
+            content = ${Translation.translate('button', null, [], null, 'GesagtGetan.CookieDialogue')}
+        }
+        javascript = GesagtGetan.CookieDialogue:Tag {
+            tagName = 'script'
+        }
+    }
+}

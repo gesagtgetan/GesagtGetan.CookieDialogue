@@ -1,5 +1,0 @@
-// Namespaces are defined in the Root.ts2 file
-
-prototype(C:Template) < prototype(F:Value) {
-	value = ''
-}

@@ -1,7 +1,0 @@
-// Namespaces are defined in the Root.ts2 file
-
-prototype(C:Process) < prototype(F:Value) {
-	@position = 'end'
-	dialog = C:Content
-	value = ${value + this.dialog}
-}
