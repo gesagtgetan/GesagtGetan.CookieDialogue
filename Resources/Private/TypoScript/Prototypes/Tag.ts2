@@ -4,7 +4,7 @@ prototype(GesagtGetan.CookieDialogue:Tag) < prototype(TYPO3.TypoScript:Tag) {
   @context.file = ${this.file}
   @if.file = ${!!this.file}
 
-  content = GesagtGetan.CookieDialogue:FileContent {
+  content = Carbon.FileContent:FileContent {
     path = ${file}
   }
 }

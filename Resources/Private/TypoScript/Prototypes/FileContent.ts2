@@ -1,5 +1,0 @@
-prototype(GesagtGetan.CookieDialogue:FileContent) < prototype(TYPO3.TypoScript:Value) {
-  @class = 'GesagtGetan\\CookieDialogue\\TypoScript\\FileContentImplementation'
-  path = null
-  resource = null
-}

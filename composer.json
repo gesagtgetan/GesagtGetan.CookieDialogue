@@ -20,7 +20,8 @@
         "exclude": [".editorconfig", ".gitignore", ".github", ".gitattributes", "yarn.lock", "package.json"]
     },
     "require": {
-        "typo3/neos": "~2.0"
+        "neos/neos": "~2.0",
+        "carbon/filecontent": "^0.5"
     },
     "autoload": {
         "psr-4": {
