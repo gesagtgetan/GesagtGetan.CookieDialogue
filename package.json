@@ -1,7 +1,8 @@
 {
   "name": "GesagtGetan.CookieDialogue",
   "version": "2.0.0",
-  "description": "",
+  "description": "Frontend files for GesagtGetan.CookieDialogue",
+  "private": true,
   "scripts": {
     "js": "uglifyjs2 Resources/Private/Component/Main.js --mangle --compress --output Resources/Public/Main.js",
     "css": "node-sass Resources/Private/Component/Main.scss Resources/Public/Main.css | cssnano Resources/Public/Main.css Resources/Public/Main.css  --autoprefixer.add true --autoprefixer.browsers: '> 1%' --no-zindex --discardComments.removeAll true ",

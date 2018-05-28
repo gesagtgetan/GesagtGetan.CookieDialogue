@@ -1,66 +1,38 @@
 (function() {
-    var daysToExpire = 3650;
-    var cookieName = "cookiesAllowed";
-    var visibleClass = "-visible";
     var dialog = document.querySelector(".cookie-dialogue");
-    var CookieDialogue = {
-        // check for cookie
-        checkCookie: function() {
-            if (CookieDialogue.getCookie() != "1") {
-                setTimeout(function() {
-                    dialog.querySelector("button").onclick =
-                        CookieDialogue.accept;
-                    dialog.classList.add(visibleClass);
-                }, 500);
-            } else {
-                CookieDialogue.remove();
-            }
-        },
-        // remove dialog box
-        remove: function() {
-            dialog.parentElement.removeChild(dialog);
-        },
-
-        // accept cookie
-        accept: function() {
-            dialog.classList.remove(visibleClass);
-            setTimeout(CookieDialogue.remove, 500);
-            CookieDialogue.setCookie();
-            return false;
-        },
-        // set cookie
-        setCookie: function() {
-            try {
-                var date = new Date();
-                var expires = "expires=";
-                date.setTime(date.getTime() + daysToExpire * 86400000); // 24 * 60 * 60 * 1000 = 86400000
-                expires += date.toUTCString();
-                document.cookie = cookieName + "=1;" + expires + ";path=/";
-            } catch (e) {}
-        },
-        // get cookie
-        getCookie: function() {
-            try {
-                var name = cookieName + "=";
-                var decodedCookie = decodeURIComponent(document.cookie);
-                var cookieArray = decodedCookie.split(";");
-                for (var i = 0; i < cookieArray.length; i++) {
-                    var c = cookieArray[i];
-                    while (c.charAt(0) == " ") {
-                        c = c.substring(1);
-                    }
-                    if (c.indexOf(name) == 0) {
-                        return c.substring(name.length, c.length);
-                    }
-                }
-                return "";
-            } catch (error) {
-                return "";
-            }
-        }
-    };
 
     if (dialog) {
-        CookieDialogue.checkCookie();
+        var storage = {
+            name: "cookieDialogue",
+            value: "accepted"
+        };
+        var query = {
+            visible: "-visible",
+            button: "button"
+        };
+
+        function remove() {
+            dialog.parentElement.removeChild(dialog);
+        }
+
+        function accept() {
+            dialog.classList.remove(query.visible);
+            setTimeout(remove, 500);
+            localStorage.setItem(storage.name, storage.value);
+            return false;
+        }
+
+        function checkItem() {
+            if (localStorage.getItem(storage.name) == storage.value) {
+                remove();
+            } else {
+                setTimeout(function() {
+                    dialog.querySelector(query.button).onclick = accept;
+                    dialog.classList.add(query.visible);
+                }, 500);
+            }
+        }
+
+        checkItem();
     }
 })();
