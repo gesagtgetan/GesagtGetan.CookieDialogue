@@ -1,7 +1,8 @@
 {
     "name": "gesagtgetan/cookiedialogue",
     "type": "typo3-flow-plugin",
-    "description": "Simple cookie dialogue plugin. See settings to set path to imprint page",
+    "description":
+        "Simple cookie dialogue plugin. See settings to set path to imprint page",
     "authors": [
         {
             "name": "Gerhard Boden",
@@ -16,9 +17,6 @@
             "role": "Developer"
         }
     ],
-    "archive": {
-        "exclude": [".editorconfig", ".gitignore", ".github", ".gitattributes", "yarn.lock", "package.json"]
-    },
     "require": {
         "neos/neos": "~2.0",
         "carbon/filecontent": "^0.5"
@@ -27,5 +25,16 @@
         "psr-4": {
             "GesagtGetan\\CookieDialogue\\": "Classes"
         }
+    },
+    "archive": {
+        "exclude": [
+            ".editorconfig",
+            ".gitignore",
+            ".github",
+            ".gitattributes",
+            "CODE_OF_CONDUCT.md",
+            "yarn.lock",
+            "package.json"
+        ]
     }
 }
