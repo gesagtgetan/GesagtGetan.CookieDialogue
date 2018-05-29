@@ -12,9 +12,7 @@ prototype(GesagtGetan.CookieDialogue:Template) < prototype(TYPO3.TypoScript:Tag)
             @if.isEnabled = ${imprintNode ? true : false}
             node = ${imprintNode}
         }
-        style = GesagtGetan.CookieDialogue:Tag {
-            tagName = 'style'
-        }
+        style = GesagtGetan.CookieDialogue:CSS
         text = TYPO3.TypoScript:Tag {
             tagName = 'p'
             content = ${Translation.translate('text', null, {link:link}, null, 'GesagtGetan.CookieDialogue')}
@@ -25,8 +23,6 @@ prototype(GesagtGetan.CookieDialogue:Template) < prototype(TYPO3.TypoScript:Tag)
             attributes.type = 'button'
             content = ${Translation.translate('button', null, [], null, 'GesagtGetan.CookieDialogue')}
         }
-        javascript = GesagtGetan.CookieDialogue:Tag {
-            tagName = 'script'
-        }
+        javascript = GesagtGetan.CookieDialogue:Javascript
     }
 }

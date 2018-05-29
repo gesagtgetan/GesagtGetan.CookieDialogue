@@ -1,0 +1,37 @@
+prototype(GesagtGetan.CookieDialogue:CSS) <  prototype(TYPO3.TypoScript:Case) {
+    configuration = ${Configuration.setting('GesagtGetan.CookieDialogue.css')}
+    path = 'resource://GesagtGetan.CookieDialogue/Public/Main.css'
+    @if.render = ${this.configuration.include}
+
+    @context.props = ${this}
+    @ignoreProperties = ${['configuration','path']}
+
+    inline {
+        condition = ${props.configuration.inline}
+        renderer = TYPO3.TypoScript:Tag {
+            tagName = 'style'
+            content = Carbon.FileContent:FileContent {
+                path = ${props.path}
+            }
+        }
+    }
+    external {
+        condition = true
+        renderer = TYPO3.TypoScript:Tag {
+            tagName = 'link'
+            attributes {
+                rel = 'stylesheet'
+                href = TYPO3.TypoScript:Array {
+                    path= TYPO3.TypoScript:ResourceUri {
+                        path = ${props.path}
+                    }
+                    arg = '?h='
+                    hash = Carbon.FileContent:HashOfFile {
+                        path = ${props.path}
+                    }
+                }
+            }
+
+        }
+    }
+}
