@@ -1,0 +1,37 @@
+prototype(GesagtGetan.CookieDialogue:CSS) <  prototype(Neos.Fusion:Case) {
+    configuration = ${Configuration.setting('GesagtGetan.CookieDialogue.css')}
+    path = 'resource://GesagtGetan.CookieDialogue/Public/Main.css'
+    @if.render = ${this.configuration.include}
+
+    @context.props = ${this}
+    @ignoreProperties = ${['configuration','path']}
+
+    inline {
+        condition = ${props.configuration.inline}
+        renderer = Neos.Fusion:Tag {
+            tagName = 'style'
+            content = Carbon.FileContent:FileContent {
+                path = ${props.path}
+            }
+        }
+    }
+    external {
+        condition = true
+        renderer = Neos.Fusion:Tag {
+            tagName = 'link'
+            attributes {
+                rel = 'stylesheet'
+                href = Neos.Fusion:Array {
+                    path= Neos.Fusion:ResourceUri {
+                        path = ${props.path}
+                    }
+                    arg = '?h='
+                    hash = Carbon.FileContent:HashOfFile {
+                        path = ${props.path}
+                    }
+                }
+            }
+
+        }
+    }
+}

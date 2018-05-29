@@ -4,9 +4,13 @@
   "description": "Frontend files for GesagtGetan.CookieDialogue",
   "private": true,
   "scripts": {
-    "js": "uglifyjs2 Resources/Private/Component/Main.js --mangle --compress --output Resources/Public/Main.js",
-    "css": "node-sass Resources/Private/Component/Main.scss Resources/Public/Main.css | cssnano Resources/Public/Main.css Resources/Public/Main.css  --autoprefixer.add true --autoprefixer.browsers: '> 1%' --no-zindex --discardComments.removeAll true ",
-    "start": "yarn run css && yarn run js",
+    "js:cookie":
+      "uglifyjs2 Resources/Private/Component/Cookie.js --mangle --compress --output Resources/Public/Cookie.js",
+    "js:storage":
+      "uglifyjs2 Resources/Private/Component/Storage.js --mangle --compress --output Resources/Public/Storage.js",
+    "css":
+      "node-sass Resources/Private/Component/Main.scss Resources/Public/Main.css | cssnano Resources/Public/Main.css Resources/Public/Main.css  --autoprefixer.add true --autoprefixer.browsers: '> 1%' --no-zindex --discardComments.removeAll true ",
+    "start": "yarn css && yarn js:cookie && yarn js:storage",
     "postinstall": "yarn start",
     "rm": "rm -rf node_modules"
   },

@@ -7,3 +7,11 @@ Neos:
 GesagtGetan:
   CookieDialogue:
     findQuery: imprint
+    javascript:
+      # Set to `Storage` or `Cookie`
+      implementation: Storage
+      include: true
+      inline: true
+    css:
+      include: true
+      inline: true

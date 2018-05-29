@@ -1,0 +1,36 @@
+prototype(GesagtGetan.CookieDialogue:Javascript) <  prototype(Neos.Fusion:Case) {
+    configuration = ${Configuration.setting('GesagtGetan.CookieDialogue.javascript')}
+    path = ${'resource://GesagtGetan.CookieDialogue/Public/' + this.configuration.implementation + '.js'}
+    @if.render = ${this.configuration.include}
+
+    @context.props = ${this}
+    @ignoreProperties = ${['configuration','path']}
+
+    inline {
+        condition = ${props.configuration.inline}
+        renderer = Neos.Fusion:Tag {
+            tagName = 'script'
+            content = Carbon.FileContent:FileContent {
+                path = ${props.path}
+            }
+        }
+    }
+    external {
+        condition = true
+        renderer = Neos.Fusion:Tag {
+            tagName = 'script'
+            attributes {
+                src = Neos.Fusion:Array {
+                    path= Neos.Fusion:ResourceUri {
+                        path = ${props.path}
+                    }
+                    arg = '?h='
+                    hash = Carbon.FileContent:HashOfFile {
+                        path = ${props.path}
+                    }
+                }
+                defer = true
+            }
+        }
+    }
+}
