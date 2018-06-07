@@ -1,37 +1,27 @@
-prototype(GesagtGetan.CookieDialogue:CSS) <  prototype(Neos.Fusion:Case) {
-    configuration = ${Configuration.setting('GesagtGetan.CookieDialogue.css')}
-    path = 'resource://GesagtGetan.CookieDialogue/Public/Main.css'
-    @if.render = ${this.configuration.include}
+prototype(GesagtGetan.CookieDialogue:CSS) < prototype(Neos.Fusion:Tag) {
+    position = ${Configuration.setting('GesagtGetan.CookieDialogue.css.position')}
+    container = ${Configuration.setting('GesagtGetan.CookieDialogue.css.container')}
+    maxWith = ${Configuration.setting('GesagtGetan.CookieDialogue.css.maxWith')}
+    linkNormal = ${Configuration.setting('GesagtGetan.CookieDialogue.css.link.normal')}
+    linkHover = ${Configuration.setting('GesagtGetan.CookieDialogue.css.link.hover')}
+    buttonNormal = ${Configuration.setting('GesagtGetan.CookieDialogue.css.button.normal')}
+    buttonHover = ${Configuration.setting('GesagtGetan.CookieDialogue.css.button.hover')}
 
     @context.props = ${this}
-    @ignoreProperties = ${['configuration','path']}
 
-    inline {
-        condition = ${props.configuration.inline}
-        renderer = Neos.Fusion:Tag {
-            tagName = 'style'
-            content = Carbon.FileContent:FileContent {
-                path = ${props.path}
-            }
+    @if.render = ${Configuration.setting('GesagtGetan.CookieDialogue.css.include')}
+    tagName = 'style'
+    content = Neos.Fusion:Array {
+        cookieDialogue = ${'font-size:12px;left:0;line-height:1.4;padding:12px 5px;position:fixed;text-align:center;transition:transform .5s cubic-bezier(.165,.84,.44,1);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:100%;z-index:10050;'}
+        cookieDialogue.@process {
+            position = ${value + (props.position == 'bottom' ? 'bottom:0;transform:translateY(110%);' : 'top:0;transform:translateY(-110%);')}
+            wrap = ${'.cookie-dialogue{' + value + props.container + '}'}
         }
-    }
-    external {
-        condition = true
-        renderer = Neos.Fusion:Tag {
-            tagName = 'link'
-            attributes {
-                rel = 'stylesheet'
-                href = Neos.Fusion:Array {
-                    path= Neos.Fusion:ResourceUri {
-                        path = ${props.path}
-                    }
-                    arg = '?h='
-                    hash = Carbon.FileContent:HashOfFile {
-                        path = ${props.path}
-                    }
-                }
-            }
-
-        }
+        visible = '.cookie-dialogue.-visible{transform:translateY(0)}'
+        paragraph = ${'.cookie-dialogue p{margin:0 auto 1em;max-width:' + props.maxWith + '}'}
+        linkNormal = ${'.cookie-dialogue a{cursor:pointer;' + props.linkNormal + '}'}
+        linkHover = ${'.cookie-dialogue a:hover,.cookie-dialogue a:focus{' + props.linkHover + '}'}
+        buttonNormal = ${'.cookie-dialogue button{cursor:pointer;display:inline-block;margin:0 auto;padding:5px 24px;text-decoration:none;border-radius:1px;' + props.buttonNormal + '}'}
+        buttonHover = ${'.cookie-dialogue button:focus,.cookie-dialogue button:hover{' + props.buttonHover + '}.cookie-dialogue button:focus{outline:none}'}
     }
 }
