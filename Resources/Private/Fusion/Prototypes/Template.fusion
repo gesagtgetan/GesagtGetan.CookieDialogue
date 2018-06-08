@@ -3,10 +3,14 @@ prototype(GesagtGetan.CookieDialogue:Template) < prototype(Neos.Fusion:Tag) {
 
     findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
     imprintNode = ${this.findQuery ? q(site).find('[instanceof Neos.Neos:Document]').filter(this.findQuery).get(0) : null}
+    callback = ${Configuration.setting('GesagtGetan.CookieDialogue.javascript.callback')}
 
-    @context.imprintNode = ${this.imprintNode}
+    @context {
+        imprintNode = ${this.imprintNode}
+        callback = ${this.callback}
+    }
 
-    attributes.class = 'cookie-dialogue'
+    attributes.class = 'cookiedialogue'
     content = Neos.Fusion:Array {
         @context.link = Neos.Neos:NodeUri {
             @if.isEnabled = ${imprintNode ? true : false}
@@ -18,10 +22,16 @@ prototype(GesagtGetan.CookieDialogue:Template) < prototype(Neos.Fusion:Tag) {
             content = ${Translation.translate('text', null, {link:link}, null, 'GesagtGetan.CookieDialogue')}
             content.@process.removeEmptyLink = ${link ? value : String.stripTags(value, '<br>')}
         }
-        button = Neos.Fusion:Tag {
-            tagName = 'button'
-            attributes.type = 'button'
-            content = ${Translation.translate('button', null, [], null, 'GesagtGetan.CookieDialogue')}
+        buttons = Neos.Fusion:Array {
+            open = ${callback.decline ? '<div>' : ''}
+            accept = GesagtGetan.CookieDialogue:Button {
+                key = 'accept'
+            }
+            decline = GesagtGetan.CookieDialogue:Button {
+                key = 'decline'
+                @if.hasDecline = ${callback.decline ? true : false}
+            }
+            close = ${callback.decline ? '</div>' : ''}
         }
         javascript = GesagtGetan.CookieDialogue:Javascript
     }

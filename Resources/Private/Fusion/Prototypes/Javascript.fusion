@@ -1,6 +1,6 @@
 prototype(GesagtGetan.CookieDialogue:Javascript) < prototype(Neos.Fusion:Tag) {
     configuration = ${Configuration.setting('GesagtGetan.CookieDialogue.javascript')}
-    path = ${'resource://GesagtGetan.CookieDialogue/Public/' + this.configuration.implementation + '.js'}
+    path = ${'resource://GesagtGetan.CookieDialogue/Private/Templates/' + this.configuration.implementation + '.js'}
     @if.render = ${this.configuration.include}
     @context.path = ${this.path}
 

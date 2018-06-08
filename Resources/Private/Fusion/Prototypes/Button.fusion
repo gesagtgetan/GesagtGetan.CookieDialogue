@@ -1,0 +1,13 @@
+prototype(GesagtGetan.CookieDialogue:Button) < prototype(Neos.Fusion:Tag) {
+    key = null
+    @context.key = ${this.key}
+
+    tagName = 'button'
+    attributes {
+        type = 'button'
+        onClick = ${callback[key] ? String.replace(callback[key], '"', "'") : false}
+        style = ${key == 'decline' ? 'background:transparent;border:0;padding:0' : false}
+    }
+    content = ${Translation.translate(this.key, null, [], null, 'GesagtGetan.CookieDialogue')}
+
+}
