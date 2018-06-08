@@ -1,10 +1,10 @@
 (function() {
-    var dialog = document.querySelector(".cookie-dialogue");
+    var dialog = document.querySelector(".cookiedialogue");
 
     if (dialog) {
         var storage = {
             name: "cookieDialogue",
-            value: "accepted"
+            value: "closed"
         };
         var query = {
             visible: "-visible",
@@ -15,11 +15,10 @@
             dialog.parentElement.removeChild(dialog);
         }
 
-        function accept() {
+        function close() {
             dialog.classList.remove(query.visible);
             setTimeout(remove, 500);
             localStorage.setItem(storage.name, storage.value);
-            return false;
         }
 
         function checkItem() {
@@ -27,7 +26,10 @@
                 remove();
             } else {
                 setTimeout(function() {
-                    dialog.querySelector(query.button).onclick = accept;
+                    var buttons = dialog.querySelectorAll(query.button);
+                    for (var i = 0; i < buttons.length; i++) {
+                        buttons[i].addEventListener("click", close)
+                    }
                     dialog.classList.add(query.visible);
                 }, 500);
             }

@@ -3,9 +3,12 @@
     <file original="" product-name="GesagtGetan.CookieDialogue" source-language="de" datatype="plaintext">
         <body>
             <trans-unit id="text" xml:space="preserve">
-                <source><![CDATA[Diese Seite verwendet Cookies, die für eine uneingeschränkte Nutzung der Website nötig sind. Detaillierte Informationen über den Einsatz von Cookies auf dieser Website finden Sie in der <a href="{link}">Datenschutzerklärung</a>.<br> Dort kann auch der Verwendung von Cookies widersagt werden.]]></source>
+                <source><![CDATA[Diese Seite verwendet Cookies, die für eine uneingeschränkte Nutzung der Website nötig sind. Detaillierte Informationen über den Einsatz von Cookies auf dieser Website finden Sie in der <a href="{link}">Datenschutzerklärung</a>. Dort kann auch die Verwendung von Cookies eingestellt werden.]]></source>
             </trans-unit>
-            <trans-unit id="button" xml:space="preserve">
+            <trans-unit id="decline" xml:space="preserve">
+                <source>Ablehnen</source>
+            </trans-unit>
+            <trans-unit id="accept" xml:space="preserve">
                 <source>Akzeptieren</source>
             </trans-unit>
         </body>

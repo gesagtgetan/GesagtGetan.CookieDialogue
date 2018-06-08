@@ -1,27 +1,38 @@
 prototype(GesagtGetan.CookieDialogue:CSS) < prototype(TYPO3.TypoScript:Tag) {
     position = ${Configuration.setting('GesagtGetan.CookieDialogue.css.position')}
+    style = ${Configuration.setting('GesagtGetan.CookieDialogue.css.style')}
     container = ${Configuration.setting('GesagtGetan.CookieDialogue.css.container')}
     maxWith = ${Configuration.setting('GesagtGetan.CookieDialogue.css.maxWith')}
-    linkNormal = ${Configuration.setting('GesagtGetan.CookieDialogue.css.link.normal')}
-    linkHover = ${Configuration.setting('GesagtGetan.CookieDialogue.css.link.hover')}
-    buttonNormal = ${Configuration.setting('GesagtGetan.CookieDialogue.css.button.normal')}
-    buttonHover = ${Configuration.setting('GesagtGetan.CookieDialogue.css.button.hover')}
+    link = ${Configuration.setting('GesagtGetan.CookieDialogue.css.link')}
+    button = ${Configuration.setting('GesagtGetan.CookieDialogue.css.button')}
+
+    // Prefix helpers
+    flex = 'display:-webkit-box;display:-ms-flexbox;display:flex;'
+    flexColumn = '-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;'
+    flexReverse = '-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;'
+    alignCenter = '-webkit-box-align:center;-ms-flex-align:center;align-items:center;'
+    justifyBetween = '-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;'
+    userSelect = '-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;'
 
     @context.props = ${this}
 
     @if.render = ${Configuration.setting('GesagtGetan.CookieDialogue.css.include')}
     tagName = 'style'
     content = TYPO3.TypoScript:Array {
-        cookieDialogue = ${'font-size:12px;left:0;line-height:1.4;padding:12px 5px;position:fixed;text-align:center;transition:transform .5s cubic-bezier(.165,.84,.44,1);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:100%;z-index:10050;'}
+        cookieDialogue = ${props.flex + props.alignCenter + props.userSelect + 'left:0;right:0;line-height:1.4;padding:1em 0 0;position:fixed;transition:transform .5s cubic-bezier(.165,.84,.44,1);z-index:10050;'}
         cookieDialogue.@process {
-            position = ${value + (props.position == 'bottom' ? 'bottom:0;transform:translateY(110%);' : 'top:0;transform:translateY(-110%);')}
-            wrap = ${'.cookie-dialogue{' + value + props.container + '}'}
+            position = ${value + props.position + ':0;transform:translateY(' + (props.position == 'top' ? '-' : '') + '110%);'}
+            style = ${value + (props.style == 'center' ? props.flexColumn : props.justifyBetween)}
+            align = ${value + 'text-align:' + props.style + ';'}
+            wrap = ${'.cookiedialogue{' + value + props.container + '}'}
         }
-        visible = '.cookie-dialogue.-visible{transform:translateY(0)}'
-        paragraph = ${'.cookie-dialogue p{margin:0 auto 1em;max-width:' + props.maxWith + '}'}
-        linkNormal = ${'.cookie-dialogue a{cursor:pointer;' + props.linkNormal + '}'}
-        linkHover = ${'.cookie-dialogue a:hover,.cookie-dialogue a:focus{' + props.linkHover + '}'}
-        buttonNormal = ${'.cookie-dialogue button{cursor:pointer;display:inline-block;margin:0 auto;padding:5px 24px;text-decoration:none;border-radius:1px;' + props.buttonNormal + '}'}
-        buttonHover = ${'.cookie-dialogue button:focus,.cookie-dialogue button:hover{' + props.buttonHover + '}.cookie-dialogue button:focus{outline:none}'}
+        div = ${'.cookiedialogue div{' + props.flex + props.flexColumn + '}@media(min-width:600px){.cookiedialogue div{' + props.flexReverse + '}}'}
+        div.@if.isLeft = ${props.style == 'left'}
+        visible = '.cookiedialogue.-visible{transform:translateY(0)}'
+        paragraph = ${'.cookiedialogue p{margin:0 1em 1em' + (props.maxWith ? ';max-width:' + props.maxWith : '') + '}'}
+        buttonNormal = ${'.cookiedialogue button{cursor:pointer;display:inline-block;margin:0 1em 1em;padding:5px 24px;text-decoration:none;border-radius:1px;' + props.button.normal + '}'}
+        buttonHover = ${'.cookiedialogue button:focus,.cookiedialogue button:hover{' + props.button.hover + '}.cookiedialogue button:focus{outline:none}'}
+        linkNormal = ${'.cookiedialogue a,.cookiedialogue button[style]{cursor:pointer;' + props.link.normal + '}'}
+        linkHover = ${'.cookiedialogue a:hover,.cookiedialogue a:focus,.cookiedialogue button[style]:hover,.cookiedialogue button[style]:focus{' + props.link.hover + '}'}
     }
 }

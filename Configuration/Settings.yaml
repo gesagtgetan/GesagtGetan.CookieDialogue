@@ -7,15 +7,22 @@ TYPO3:
 GesagtGetan:
   CookieDialogue:
     findQuery: imprint
+    translationPackage: 'GesagtGetan.CookieDialogue'
     javascript:
       # Set to `Storage` or `Cookie`
       implementation: Storage
       include: true
+      callback:
+        accept: null
+        decline: null
     css:
       include: true
+      # Set to `top` or `bottom`
       position: bottom
-      container: 'background:rgba(0,0,0,0.7);color:#fff'
-      maxWith: '60em'
+      # Set to `left` or `center`
+      style: center
+      container: 'font-size:0.75rem;background:rgba(0,0,0,0.7);color:#fff'
+      maxWith: 60em
       link:
         normal: 'color:#fff;text-decoration:underline'
         hover: 'text-decoration:none'

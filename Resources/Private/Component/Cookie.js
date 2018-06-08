@@ -1,11 +1,11 @@
 (function() {
-    var dialog = document.querySelector(".cookie-dialogue");
+    var dialog = document.querySelector(".cookiedialogue");
 
     if (dialog) {
         // We create a cookie with 10 years expire 10 * 365 * 24 * 60 * 60 * 1000 = 315360000000
         var storage = {
             name: "cookieDialogue",
-            value: "accepted",
+            value: "closed",
             timeToExpire: 315360000000
         };
         var query = {
@@ -53,11 +53,10 @@
             }
         }
 
-        function accept() {
+        function close() {
             dialog.classList.remove(query.visible);
             setTimeout(remove, 500);
             setCookie();
-            return false;
         }
 
         function checkItem() {
@@ -65,7 +64,10 @@
                 remove();
             } else {
                 setTimeout(function() {
-                    dialog.querySelector(query.button).onclick = accept;
+                    var buttons = dialog.querySelectorAll(query.button);
+                    for (var i = 0; i < buttons.length; i++) {
+                        buttons[i].addEventListener("click", close)
+                    }
                     dialog.classList.add(query.visible);
                 }, 500);
             }
