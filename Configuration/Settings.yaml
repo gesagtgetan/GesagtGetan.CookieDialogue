@@ -21,7 +21,7 @@ GesagtGetan:
       position: bottom
       # Set to `left` or `center`
       style: center
-      container: 'font-size:0.75rem;background:rgba(0,0,0,0.7);color:#fff'
+      container: 'font-size:12px;background:rgba(0,0,0,0.7);color:#fff'
       maxWith: 60em
       link:
         normal: 'color:#fff;text-decoration:underline'
