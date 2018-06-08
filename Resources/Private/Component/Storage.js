@@ -1,5 +1,5 @@
 (function() {
-    var dialog = document.querySelector(".cookiedialogue");
+    var dialog = document.querySelector(".cookie-dialogue");
 
     if (dialog) {
         var storage = {
@@ -28,7 +28,7 @@
                 setTimeout(function() {
                     var buttons = dialog.querySelectorAll(query.button);
                     for (var i = 0; i < buttons.length; i++) {
-                        buttons[i].addEventListener("click", close)
+                        buttons[i].addEventListener("click", close);
                     }
                     dialog.classList.add(query.visible);
                 }, 500);

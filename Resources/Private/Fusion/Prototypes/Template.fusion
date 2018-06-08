@@ -4,13 +4,18 @@ prototype(GesagtGetan.CookieDialogue:Template) < prototype(Neos.Fusion:Tag) {
     findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
     imprintNode = ${this.findQuery ? q(site).find('[instanceof Neos.Neos:Document]').filter(this.findQuery).get(0) : null}
     callback = ${Configuration.setting('GesagtGetan.CookieDialogue.javascript.callback')}
+    translationPackage = ${Configuration.setting('GesagtGetan.CookieDialogue.translationPackage')}
+    selector = 'cookie-dialogue'
 
     @context {
         imprintNode = ${this.imprintNode}
         callback = ${this.callback}
+        translationPackage = ${this.translationPackage}
+        selector = ${this.selector}
+        className = ${'.' + this.selector}
     }
 
-    attributes.class = 'cookie-dialogue'
+    attributes.class = ${selector}
     content = Neos.Fusion:Array {
         @context.link = Neos.Neos:NodeUri {
             @if.isEnabled = ${imprintNode ? true : false}
@@ -19,7 +24,7 @@ prototype(GesagtGetan.CookieDialogue:Template) < prototype(Neos.Fusion:Tag) {
         style = GesagtGetan.CookieDialogue:CSS
         text = Neos.Fusion:Tag {
             tagName = 'p'
-            content = ${Translation.translate('text', null, {link:link}, null, 'GesagtGetan.CookieDialogue')}
+            content = ${Translation.translate('text', null, {link:link}, null, translationPackage)}
             content.@process.removeEmptyLink = ${link ? value : String.stripTags(value, '<br>')}
         }
         buttons = Neos.Fusion:Array {

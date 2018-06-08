@@ -24,15 +24,15 @@ prototype(GesagtGetan.CookieDialogue:CSS) < prototype(Neos.Fusion:Tag) {
             position = ${value + props.position + ':0;transform:translateY(' + (props.position == 'top' ? '-' : '') + '110%);'}
             style = ${value + (props.style == 'center' ? props.flexColumn : props.justifyBetween)}
             align = ${value + 'text-align:' + props.style + ';'}
-            wrap = ${'.cookiedialogue{' + value + props.container + '}'}
+            wrap = ${className + '{' + value + props.container + '}'}
         }
-        div = ${'.cookiedialogue div{' + props.flex + props.flexColumn + '}@media(min-width:600px){.cookiedialogue div{' + props.flexReverse + '}}'}
+        div = ${className + ' div{' + props.flex + props.flexColumn + '}@media(min-width:600px){' + className + ' div{' + props.flexReverse + '}}'}
         div.@if.isLeft = ${props.style == 'left'}
-        visible = '.cookiedialogue.-visible{transform:translateY(0)}'
-        paragraph = ${'.cookiedialogue p{margin:0 1em 1em' + (props.maxWith ? ';max-width:' + props.maxWith : '') + '}'}
-        buttonNormal = ${'.cookiedialogue button{cursor:pointer;display:inline-block;margin:0 1em 1em;padding:5px 24px;text-decoration:none;border-radius:1px;' + props.button.normal + '}'}
-        buttonHover = ${'.cookiedialogue button:focus,.cookiedialogue button:hover{' + props.button.hover + '}.cookiedialogue button:focus{outline:none}'}
-        linkNormal = ${'.cookiedialogue a,.cookiedialogue button[style]{cursor:pointer;' + props.link.normal + '}'}
-        linkHover = ${'.cookiedialogue a:hover,.cookiedialogue a:focus,.cookiedialogue button[style]:hover,.cookiedialogue button[style]:focus{' + props.link.hover + '}'}
+        visible = ${className + '.-visible{transform:translateY(0)}'}
+        paragraph = ${className + ' p{margin:0 1em 1em' + (props.maxWith ? ';max-width:' + props.maxWith : '') + '}'}
+        buttonNormal = ${className + ' button{cursor:pointer;display:inline-block;margin:0 1em 1em;padding:5px 24px;text-decoration:none;border-radius:1px;' + props.button.normal + '}'}
+        buttonHover = ${className + ' button:focus,' + className + ' button:hover{' + props.button.hover + '}' + className + ' button:focus{outline:none}'}
+        linkNormal = ${className + ' a,' + className + ' button[style]{cursor:pointer;' + props.link.normal + '}'}
+        linkHover = ${className + ' a:hover,' + className + ' a:focus,' + className + ' button[style]:hover,' + className + ' button[style]:focus{' + props.link.hover + '}'}
     }
 }
