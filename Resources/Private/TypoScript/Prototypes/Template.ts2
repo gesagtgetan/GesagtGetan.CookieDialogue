@@ -11,10 +11,11 @@ prototype(GesagtGetan.CookieDialogue:Template) < prototype(TYPO3.TypoScript:Tag)
         imprintNode = ${this.imprintNode}
         callback = ${this.callback}
         translationPackage = ${this.translationPackage}
+        selector = ${this.selector}
         className = ${'.' + this.selector}
     }
 
-    attributes.class = ${this.selector}
+    attributes.class = ${selector}
     content = TYPO3.TypoScript:Array {
         @context.link = TYPO3.Neos:NodeUri {
             @if.isEnabled = ${imprintNode ? true : false}
