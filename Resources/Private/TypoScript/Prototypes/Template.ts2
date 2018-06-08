@@ -5,14 +5,16 @@ prototype(GesagtGetan.CookieDialogue:Template) < prototype(TYPO3.TypoScript:Tag)
     imprintNode = ${this.findQuery ? q(site).find('[instanceof TYPO3.Neos:Document]').filter(this.findQuery).get(0) : null}
     callback = ${Configuration.setting('GesagtGetan.CookieDialogue.javascript.callback')}
     translationPackage = ${Configuration.setting('GesagtGetan.CookieDialogue.translationPackage')}
+    selector = 'cookie-dialogue'
 
     @context {
         imprintNode = ${this.imprintNode}
         callback = ${this.callback}
         translationPackage = ${this.translationPackage}
+        className = ${'.' + this.selector}
     }
 
-    attributes.class = 'cookiedialogue'
+    attributes.class = ${this.selector}
     content = TYPO3.TypoScript:Array {
         @context.link = TYPO3.Neos:NodeUri {
             @if.isEnabled = ${imprintNode ? true : false}
