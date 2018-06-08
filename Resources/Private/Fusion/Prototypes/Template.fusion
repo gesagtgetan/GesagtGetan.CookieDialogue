@@ -10,7 +10,7 @@ prototype(GesagtGetan.CookieDialogue:Template) < prototype(Neos.Fusion:Tag) {
         callback = ${this.callback}
     }
 
-    attributes.class = 'cookiedialogue'
+    attributes.class = 'cookie-dialogue'
     content = Neos.Fusion:Array {
         @context.link = Neos.Neos:NodeUri {
             @if.isEnabled = ${imprintNode ? true : false}
