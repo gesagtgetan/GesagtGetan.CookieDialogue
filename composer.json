@@ -3,6 +3,7 @@
     "type": "neos-plugin",
     "description":
         "Simple cookie dialogue plugin. See settings to set path to imprint page",
+    "license": "MIT",
     "authors": [
         {
             "name": "Gerhard Boden",

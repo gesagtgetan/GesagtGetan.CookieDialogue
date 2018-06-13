@@ -15,7 +15,7 @@
     "rm": "rm -rf node_modules"
   },
   "author": "Jon Uhlmann",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cssnano-cli": "^1.0.5",
     "node-sass": "^4.9.0",
