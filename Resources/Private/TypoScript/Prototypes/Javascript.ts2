@@ -5,7 +5,5 @@ prototype(GesagtGetan.CookieDialogue:Javascript) < prototype(TYPO3.TypoScript:Ta
     @context.path = ${this.path}
 
     tagName = 'script'
-    content = Carbon.FileContent:FileContent {
-        path = ${path}
-    }
+    content = ${Carbon.FileContent.path(path)}
 }
