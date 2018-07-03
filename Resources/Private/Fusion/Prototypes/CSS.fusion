@@ -14,25 +14,39 @@ prototype(GesagtGetan.CookieDialogue:CSS) < prototype(Neos.Fusion:Tag) {
     justifyBetween = '-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;'
     userSelect = '-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;'
 
-    @context.props = ${this}
+    @context {
+        position = ${this.position}
+        style = ${this.style}
+        container = ${this.container}
+        maxWith = ${this.maxWith}
+        link = ${this.link}
+        button = ${this.button}
+        flex = ${this.flex}
+        flexColumn = ${this.flexColumn}
+        flexReverse = ${this.flexReverse}
+        alignCenter = ${this.alignCenter}
+        justifyBetween = ${this.justifyBetween}
+        userSelect = ${this.userSelect}
+    }
 
     @if.render = ${Configuration.setting('GesagtGetan.CookieDialogue.css.include')}
+
     tagName = 'style'
     content = Neos.Fusion:Array {
-        cookieDialogue = ${props.flex + props.alignCenter + props.userSelect + 'left:0;right:0;line-height:1.4;padding:1em 0 0;position:fixed;transition:transform .5s cubic-bezier(.165,.84,.44,1);z-index:10050;'}
+        cookieDialogue = ${flex + alignCenter + userSelect + 'left:0;right:0;line-height:1.4;padding:1em 0 0;position:fixed;transition:transform .5s cubic-bezier(.165,.84,.44,1);z-index:10050;'}
         cookieDialogue.@process {
-            position = ${value + props.position + ':0;transform:translateY(' + (props.position == 'top' ? '-' : '') + '110%);'}
-            style = ${value + (props.style == 'center' ? props.flexColumn : props.justifyBetween)}
-            align = ${value + 'text-align:' + props.style + ';'}
-            wrap = ${className + '{' + value + props.container + '}'}
+            position = ${value + position + ':0;transform:translateY(' + (position == 'top' ? '-' : '') + '110%);'}
+            style = ${value + (style == 'center' ? flexColumn : justifyBetween)}
+            align = ${value + 'text-align:' + style + ';'}
+            wrap = ${className + '{' + value + container + '}'}
         }
-        div = ${className + ' div{' + props.flex + props.flexColumn + '}@media(min-width:600px){' + className + ' div{' + props.flexReverse + '}}'}
-        div.@if.isLeft = ${props.style == 'left'}
+        div = ${className + ' div{' + flex + flexColumn + '}@media(min-width:600px){' + className + ' div{' + flexReverse + '}}'}
+        div.@if.isLeft = ${style == 'left'}
         visible = ${className + '.-visible{transform:translateY(0)}'}
-        paragraph = ${className + ' p{margin:0 1em 1em' + (props.maxWith ? ';max-width:' + props.maxWith : '') + '}'}
-        buttonNormal = ${className + ' button{cursor:pointer;display:inline-block;margin:0 1em 1em;padding:5px 24px;text-decoration:none;border-radius:1px;' + props.button.normal + '}'}
-        buttonHover = ${className + ' button:focus,' + className + ' button:hover{' + props.button.hover + '}' + className + ' button:focus{outline:none}'}
-        linkNormal = ${className + ' a,' + className + ' button[style]{cursor:pointer;' + props.link.normal + '}'}
-        linkHover = ${className + ' a:hover,' + className + ' a:focus,' + className + ' button[style]:hover,' + className + ' button[style]:focus{' + props.link.hover + '}'}
+        paragraph = ${className + ' p{margin:0 1em 1em' + (maxWith ? ';max-width:' + maxWith : '') + '}'}
+        buttonNormal = ${className + ' button{cursor:pointer;display:inline-block;margin:0 1em 1em;padding:5px 24px;text-decoration:none;border-radius:1px;' + button.normal + '}'}
+        buttonHover = ${className + ' button:focus,' + className + ' button:hover{' + button.hover + '}' + className + ' button:focus{outline:none}'}
+        linkNormal = ${className + ' a,' + className + ' button[style]{cursor:pointer;' + link.normal + '}'}
+        linkHover = ${className + ' a:hover,' + className + ' a:focus,' + className + ' button[style]:hover,' + className + ' button[style]:focus{' + link.hover + '}'}
     }
 }
