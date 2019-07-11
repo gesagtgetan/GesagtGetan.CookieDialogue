@@ -3,22 +3,25 @@
   "version": "2.0.0",
   "description": "Frontend files for GesagtGetan.CookieDialogue",
   "private": true,
-  "scripts": {
-    "js:cookie":
-      "uglifyjs2 Resources/Private/Component/Cookie.js --mangle --compress --output Resources/Public/Cookie.js",
-    "js:storage":
-      "uglifyjs2 Resources/Private/Component/Storage.js --mangle --compress --output Resources/Public/Storage.js",
-    "css":
-      "node-sass Resources/Private/Component/Main.scss Resources/Public/Main.css | cssnano Resources/Public/Main.css Resources/Public/Main.css  --autoprefixer.add true --autoprefixer.browsers: '> 1%' --no-zindex --discardComments.removeAll true ",
-    "start": "yarn css && yarn js:cookie && yarn js:storage",
-    "postinstall": "yarn start",
-    "rm": "rm -rf node_modules"
-  },
   "author": "Jon Uhlmann",
   "license": "MIT",
-  "dependencies": {
-    "cssnano-cli": "^1.0.5",
-    "node-sass": "^4.9.0",
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not ie <= 10",
+    "not ie_mob <= 10",
+    "not bb <= 10",
+    "not op_mob <= 12.1"
+  ],
+  "devDependencies": {
     "uglify-js2": "^2.1.11"
+  },
+  "scripts": {
+    "build:cookie": "uglifyjs2 Resources/Private/Component/Cookie.js --mangle --compress --output Resources/Private/Templates/Cookie.js",
+    "build:storage": "uglifyjs2 Resources/Private/Component/Storage.js --mangle --compress --output Resources/Private/Templates/Storage.js",
+    "build": "yarn build:cookie && yarn build:storage",
+    "start": "yarn build",
+    "postinstall": "yarn build"
   }
 }

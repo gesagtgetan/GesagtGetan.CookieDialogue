@@ -30,12 +30,12 @@
     "archive": {
         "exclude": [
             ".editorconfig",
-            ".gitignore",
-            ".github",
             ".gitattributes",
+            ".github",
+            ".gitignore",
             "CODE_OF_CONDUCT.md",
-            "yarn.lock",
-            "package.json"
+            "package.json",
+            "yarn.lock"
         ]
     }
 }
