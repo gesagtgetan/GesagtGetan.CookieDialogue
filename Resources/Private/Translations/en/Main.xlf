@@ -2,13 +2,13 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file original="" product-name="GesagtGetan.CookieDialogue" source-language="en" datatype="plaintext">
         <body>
-            <trans-unit id="text" xml:space="preserve">
+            <trans-unit id="cookiedialogue.text" xml:space="preserve">
                 <source><![CDATA[This website uses Cookies that are necessary for full use of the website. Detailed information about the use of Cookies on this website can be found in our <a href="{link}">data privacy policy</a>. There, the use of Cookies can also be set.]]></source>
             </trans-unit>
-            <trans-unit id="decline" xml:space="preserve">
+            <trans-unit id="cookiedialogue.decline" xml:space="preserve">
                 <source>Decline</source>
             </trans-unit>
-            <trans-unit id="accept" xml:space="preserve">
+            <trans-unit id="cookiedialogue.accept" xml:space="preserve">
                 <source>Accept</source>
             </trans-unit>
         </body>
