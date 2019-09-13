@@ -7,7 +7,6 @@ prototype(GesagtGetan.CookieDialogue:Component) < prototype(Neos.Fusion:Componen
     imprintNode = ${this.findQuery ? q(site).find('[instanceof Neos.Neos:Document]').filter(this.findQuery).get(0) : null}
     translationPackage = ${Configuration.setting('GesagtGetan.CookieDialogue.translationPackage')}
 
-
     // Internal
     position = ${this.css.position}
     style = ${this.css.style}
