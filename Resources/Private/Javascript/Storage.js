@@ -1,14 +1,14 @@
 (function() {
-    var dialog = document.querySelector(".cookie-dialogue");
+    var dialog = document.querySelector('.cookie-dialogue');
 
     if (dialog) {
         var storage = {
-            name: "cookieDialogue",
-            value: "closed"
+            name: 'cookieDialogue',
+            value: 'closed'
         };
         var query = {
-            visible: "-visible",
-            button: "button"
+            visible: 'cookie-dialogue--visible',
+            button: 'button'
         };
 
         function remove() {
@@ -28,7 +28,7 @@
                 setTimeout(function() {
                     var buttons = dialog.querySelectorAll(query.button);
                     for (var i = 0; i < buttons.length; i++) {
-                        buttons[i].addEventListener("click", close);
+                        buttons[i].addEventListener('click', close);
                     }
                     dialog.classList.add(query.visible);
                 }, 500);

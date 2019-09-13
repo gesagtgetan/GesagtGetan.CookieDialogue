@@ -1,5 +1,5 @@
 {
-  "name": "GesagtGetan.CookieDialogue",
+  "name": "gesagtgetan.cookiedialogue",
   "version": "2.0.0",
   "description": "Frontend files for GesagtGetan.CookieDialogue",
   "private": true,
@@ -18,8 +18,8 @@
     "uglify-js2": "^2.1.11"
   },
   "scripts": {
-    "build:cookie": "uglifyjs2 Resources/Private/Component/Cookie.js --mangle --compress --output Resources/Private/Templates/Cookie.js",
-    "build:storage": "uglifyjs2 Resources/Private/Component/Storage.js --mangle --compress --output Resources/Private/Templates/Storage.js",
+    "build:cookie": "uglifyjs2 Resources/Private/Javascript/Cookie.js --mangle --compress --output Resources/Private/Templates/Cookie.js",
+    "build:storage": "uglifyjs2 Resources/Private/Javascript/Storage.js --mangle --compress --output Resources/Private/Templates/Storage.js",
     "build": "yarn build:cookie && yarn build:storage",
     "start": "yarn build",
     "postinstall": "yarn build"

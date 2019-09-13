@@ -9,7 +9,7 @@
             timeToExpire: 315360000000
         };
         var query = {
-            visible: "-visible",
+            visible: "cookie-dialogue--visible",
             button: "button"
         };
 
