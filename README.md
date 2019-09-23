@@ -6,6 +6,7 @@ Simple cookie dialogue plugin. There's one Fusion prototype available: `GesagtGe
 | ------- | ----------- |
 | 2.\*    | 2.\*        |
 | 3.\*    | 3.\* + 4.\* |
+| 4.\*    | 4.\* + 5.\* |
 
 ## Installation
 
@@ -13,6 +14,12 @@ Most of the time you have to make small adjustments to a package (e.g. configura
 
 ```bash
 composer require gesagtgetan/cookiedialogue --no-update
+```
+
+To install the package under Neos 3.\* you have to enter
+
+```bash
+composer require "gesagtgetan/cookiedialogue:^3.0" --no-update
 ```
 
 To install the package under Neos 2.\* you have to enter
@@ -37,7 +44,7 @@ If the plugin doesn't include the markup you have to add this line of code to yo
 
 ```elm
 prototype(Your.Package:DocumentNodeType) {
-    cookieDialogue = GesagtGetan.CookieDialogue:Template {
+    cookieDialogue = GesagtGetan.CookieDialogue:Component {
         @position = 'before closingBodyTag'
     }
 }
