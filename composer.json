@@ -1,9 +1,8 @@
 {
     "name": "gesagtgetan/cookiedialogue",
     "type": "neos-plugin",
-    "description":
-        "Simple cookie dialogue plugin. See settings to set path to imprint page",
-    "license": "MIT",
+    "description": "Simple cookie dialogue plugin. See settings to set path to imprint page",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Gerhard Boden",
@@ -19,8 +18,8 @@
         }
     ],
     "require": {
-        "neos/neos": "~3.0 || ~4.0",
-        "carbon/eel": "^1.1"
+        "neos/neos": "^4.0 || ^5.0",
+        "neos/fusion-afx": "^1.1"
     },
     "autoload": {
         "psr-4": {

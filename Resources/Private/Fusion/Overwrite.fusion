@@ -1,3 +1,0 @@
-prototype(Neos.Neos:Page).cookieDialogue = GesagtGetan.CookieDialogue:Template {
-    @position = 'before closingBodyTag'
-}

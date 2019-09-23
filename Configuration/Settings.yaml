@@ -25,7 +25,7 @@ GesagtGetan:
       maxWith: 47em
       link:
         normal: 'color:#fff;text-decoration:underline'
-        hover: 'text-decoration:none'
+        hover: 'color:#fff;text-decoration:none'
       button:
         normal: 'color:#fff;border:1px solid #fff;background:transparent'
         hover: 'background:#fff;color:#000'

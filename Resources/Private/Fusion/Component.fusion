@@ -1,0 +1,94 @@
+prototype(GesagtGetan.CookieDialogue:Component) < prototype(Neos.Fusion:Component) {
+    @if.onlyInFrontend = ${node.context.live}
+
+    javascript = ${Configuration.setting('GesagtGetan.CookieDialogue.javascript')}
+    css = ${Configuration.setting('GesagtGetan.CookieDialogue.css')}
+    findQuery = ${Configuration.setting('GesagtGetan.CookieDialogue.findQuery')}
+    imprintNode = ${this.findQuery ? q(site).find('[instanceof Neos.Neos:Document]').filter(this.findQuery).get(0) : null}
+    translationPackage = ${Configuration.setting('GesagtGetan.CookieDialogue.translationPackage')}
+
+    // Internal
+    position = ${this.css.position}
+    style = ${this.css.style}
+    container = ${this.css.container}
+    maxWith = ${this.css.maxWith}
+    link = ${this.css.link}
+    button = ${this.css.button}
+
+    // Prefix helpers for CSS
+    flex = 'display:-webkit-box;display:-ms-flexbox;display:flex;'
+    flexColumn = '-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;'
+    flexReverse = '-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;'
+    alignCenter = '-webkit-box-align:center;-ms-flex-align:center;align-items:center;'
+    justifyBetween = '-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;'
+    userSelect = '-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;'
+
+    renderer = Neos.Fusion:Component {
+        translationPackage = ${props.translationPackage}
+        link = Neos.Neos:NodeUri {
+            @if.isEnabled = ${props.imprintNode ? true : false}
+            node = ${props.imprintNode}
+        }
+        accept = ${props.javascript.callback.accept}
+        decline = ${props.javascript.callback.decline}
+        implementation = ${props.javascript.include ? props.javascript.implementation : false}
+        style = Neos.Fusion:Tag {
+            @if.render = ${props.css.include}
+            tagName = 'style'
+            content = Neos.Fusion:Array {
+                mainOpen = '.cookie-dialogue{'
+                mainBasic = ${props.flex + props.alignCenter + props.userSelect + 'left:0;right:0;line-height:1.4;padding:1em 0 0;position:fixed;transition:transform .5s cubic-bezier(.165,.84,.44,1);z-index:10050;'}
+                mainPosition = ${props.position + ':0;transform:translateY(' + (props.position == 'top' ? '-' : '') + '110%);'}
+                mainStyle = ${props.style == 'center' ? props.flexColumn : props.justifyBetween}
+                mainAlign = ${'text-align:' + props.style + ';'}
+                mainContainer = ${props.container}
+                mainClose = '}'
+                divLeft = ${'.cookie-dialogue div{' + props.flex + props.flexColumn + '}@media(min-width:600px){.cookie-dialogue div{' + props.flexReverse + '}}'}
+                divLeft.@if.isLeft = ${props.style == 'left'}
+                visible = '.cookie-dialogue--visible{transform:translateY(0)}'
+                paragraph = ${'.cookie-dialogue p{margin:0 1em 1em' + (props.maxWith ? ';max-width:' + props.maxWith : '') + '}'}
+                buttonNormal = ${'.cookie-dialogue button{cursor:pointer;display:inline-block;margin:0 1em 1em;padding:5px 24px;text-decoration:none;border-radius:1px;' + props.button.normal + '}'}
+                buttonHover = ${'.cookie-dialogue button:focus,.cookie-dialogue button:hover{' + props.button.hover + '}.cookie-dialogue button:focus{outline:none}'}
+                linkNormal = ${'.cookie-dialogue a,.cookie-dialogue button[style]{cursor:pointer;' + props.link.normal + '}'}
+                linkHover = ${'.cookie-dialogue a:hover,.cookie-dialogue a:focus,.cookie-dialogue button[style]:hover,.cookie-dialogue button[style]:focus{' + props.link.hover + '}'}
+            }
+        }
+
+        renderer = afx`
+            <div class='cookie-dialogue'>
+                {props.style}
+                <p @process.removeEmptyLink={props.link ? value : String.stripTags(value, '<br>')}>
+                    {Translation.translate('cookiedialogue.text', null, {link:props.link}, null, props.translationPackage)}
+                </p>
+                {props.decline ? '<div>' : ''}
+                    <button type='button' onClick={props.accept ? String.replace(props.accept, '"', "'") : null}>
+                        {Translation.translate('cookiedialogue.accept', null, [], null, props.translationPackage)}
+                    </button>
+                    <button
+                        @if.set={props.decline}
+                        type='button'
+                        style='background:transparent;border:0;padding:0'
+                        onClick={String.replace(props.decline, '"', "'")}
+                    >
+                        {Translation.translate('cookiedialogue.decline', null, [], null, props.translationPackage)}
+                    </button>
+                {props.decline ? '</div>' : ''}
+                <script @if.set={props.implementation}>
+                    {File.readFile('resource://GesagtGetan.CookieDialogue/Private/Templates/' + props.implementation + '.js')}
+                </script>
+            </div>
+        `
+    }
+
+    @cache {
+        mode = 'cached'
+        maximumLifetime = 0
+        entryIdentifier{
+            cookiedialogue = 'cookiedialogue'
+            node = ${site}
+        }
+        entryTags {
+            1 = ${Neos.Caching.nodeTag(site)}
+        }
+    }
+}

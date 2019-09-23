@@ -1,3 +1,7 @@
+[![Latest Stable Version](https://poser.pugx.org/gesagtgetan/cookiedialogue/v/stable)](https://packagist.org/packages/gesagtgetan/cookiedialogue)
+[![Total Downloads](https://poser.pugx.org/gesagtgetan/cookiedialogue/downloads)](https://packagist.org/packages/gesagtgetan/cookiedialogue)
+[![License](https://poser.pugx.org/gesagtgetan/cookiedialogue/license)](https://packagist.org/packages/gesagtgetan/cookiedialogue)
+
 # GesagtGetan.CookieDialogue
 
 Simple cookie dialogue plugin. There's one Fusion prototype available: `GesagtGetan.CookieDialogue:Template`. This prototype include also the styles and the javascript.
@@ -6,6 +10,7 @@ Simple cookie dialogue plugin. There's one Fusion prototype available: `GesagtGe
 | ------- | ----------- |
 | 2.\*    | 2.\*        |
 | 3.\*    | 3.\* + 4.\* |
+| 4.\*    | 4.\* + 5.\* |
 
 ## Installation
 
@@ -13,6 +18,12 @@ Most of the time you have to make small adjustments to a package (e.g. configura
 
 ```bash
 composer require gesagtgetan/cookiedialogue --no-update
+```
+
+To install the package under Neos 3.\* you have to enter
+
+```bash
+composer require "gesagtgetan/cookiedialogue:^3.0" --no-update
 ```
 
 To install the package under Neos 2.\* you have to enter
@@ -37,7 +48,7 @@ If the plugin doesn't include the markup you have to add this line of code to yo
 
 ```elm
 prototype(Your.Package:DocumentNodeType) {
-    cookieDialogue = GesagtGetan.CookieDialogue:Template {
+    cookieDialogue = GesagtGetan.CookieDialogue:Component {
         @position = 'before closingBodyTag'
     }
 }
