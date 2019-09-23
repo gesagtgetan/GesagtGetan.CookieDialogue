@@ -74,7 +74,7 @@ prototype(GesagtGetan.CookieDialogue:Component) < prototype(Neos.Fusion:Componen
                     </button>
                 {props.decline ? '</div>' : ''}
                 <script @if.set={props.implementation}>
-                    {Carbon.FileContent.path('resource://GesagtGetan.CookieDialogue/Private/Templates/' + props.implementation + '.js')}
+                    {File.readFile('resource://GesagtGetan.CookieDialogue/Private/Templates/' + props.implementation + '.js')}
                 </script>
             </div>
         `
