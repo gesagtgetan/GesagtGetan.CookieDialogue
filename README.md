@@ -1,3 +1,7 @@
+[![Latest Stable Version](https://poser.pugx.org/gesagtgetan/cookiedialogue/v/stable)](https://packagist.org/packages/gesagtgetan/cookiedialogue)
+[![Total Downloads](https://poser.pugx.org/gesagtgetan/cookiedialogue/downloads)](https://packagist.org/packages/gesagtgetan/cookiedialogue)
+[![License](https://poser.pugx.org/gesagtgetan/cookiedialogue/license)](https://packagist.org/packages/gesagtgetan/cookiedialogue)
+
 # GesagtGetan.CookieDialogue
 
 Simple cookie dialogue plugin. There's one Fusion prototype available: `GesagtGetan.CookieDialogue:Template`. This prototype include also the styles and the javascript.
