@@ -21,6 +21,8 @@ GesagtGetan:
       position: bottom
       # Set to `left` or `center`
       style: center
+      # The breakoint where the layout `left` get activated
+      leftBreakpoint: 768px
       container: 'font-size:12px;background:rgba(0,0,0,0.7);color:#fff'
       maxWith: 47em
       link:
