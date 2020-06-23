@@ -1,5 +1,8 @@
+window.closeCookieDialogue = function() {};
+
 (function() {
     var dialog = document.querySelector('.cookie-dialogue');
+    var visible = true;
 
     if (dialog) {
         var storage = {
@@ -12,13 +15,19 @@
         };
 
         function remove() {
+            visible = false;
             dialog.parentElement.removeChild(dialog);
         }
 
+        function setItem() {
+            localStorage.setItem(storage.name, storage.value);
+        }
+
         function close() {
+            visible = false;
             dialog.classList.remove(query.visible);
             setTimeout(remove, 500);
-            localStorage.setItem(storage.name, storage.value);
+            setItem();
         }
 
         function checkItem() {
@@ -36,5 +45,17 @@
         }
 
         checkItem();
+
+        window.closeCookieDialogue = function(transition) {
+            if (!visible) {
+                return;
+            }
+            if (transition) {
+                close();
+                return;
+            }
+            remove();
+            setItem();
+        };
     }
 })();
