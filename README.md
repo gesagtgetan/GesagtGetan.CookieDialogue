@@ -4,13 +4,13 @@
 
 # GesagtGetan.CookieDialogue
 
-Simple cookie dialogue plugin. There's one Fusion prototype available: `GesagtGetan.CookieDialogue:Template`. This prototype include also the styles and the javascript.
+Simple cookie dialogue plugin. There's one Fusion prototype available: `GesagtGetan.CookieDialogue:Component`. This prototype include also the styles and the javascript.
 
-| Version | Neos        |
-| ------- | ----------- |
-| 2.\*    | 2.\*        |
-| 3.\*    | 3.\* + 4.\* |
-| 4.\*    | 4.\* + 5.\* |
+| Version | Neos               |
+| ------- | ------------------ |
+| 2.\*    | 2.\*               |
+| 3.\*    | 3.\* + 4.\*        |
+| 4.\*    | 4.\* + 5.\* + 7.\* |
 
 ## Installation
 
