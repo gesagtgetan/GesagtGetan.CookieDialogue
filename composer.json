@@ -5,12 +5,6 @@
     "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Gerhard Boden",
-            "email": "gerhard.boden@gesagt-getan.at",
-            "homepage": "https://www.gesagt-getan.at",
-            "role": "Developer"
-        },
-        {
             "name": "Jon Uhlmann",
             "email": "jon.uhlmann@gesagt-getan.at",
             "homepage": "https://www.gesagt-getan.at",
