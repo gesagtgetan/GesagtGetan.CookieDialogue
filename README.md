@@ -53,3 +53,16 @@ prototype(Your.Package:DocumentNodeType) {
     }
 }
 ```
+
+## Interact
+
+The event ``ggCookieDialogClosed`` is fired whenever the dialog is accepted. This can happen through manual user interaction
+by clicking the button, but also happens on each page load when the dialog has been accepted before and is therefor closed
+automatically.
+
+Example usage:
+```js
+document.addEventListener('ggCookieDialogClosed', function() {
+    // this code is only executed after the dialog has been accepted at least once
+});
+```

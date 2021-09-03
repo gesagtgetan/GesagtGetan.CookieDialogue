@@ -19,6 +19,7 @@ window.closeCookieDialogue = function() {};
         function remove() {
             visible = false;
             dialog.parentElement.removeChild(dialog);
+            document.dispatchEvent(new Event("ggCookieDialogClosed"));
         }
 
         function setCookie() {
