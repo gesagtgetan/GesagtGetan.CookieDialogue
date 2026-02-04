@@ -11,6 +11,7 @@ Simple cookie dialogue plugin. There's one Fusion prototype available: `GesagtGe
 | 2.\*    | 2.\*                      |
 | 3.\*    | 3.\* + 4.\*               |
 | 4.\*    | 4.\* + 5.\* + 7.\* + 8.\* |
+| 5.\*    | 9.\*                      |
 
 ## Installation
 
@@ -18,6 +19,12 @@ Most of the time you have to make small adjustments to a package (e.g. configura
 
 ```bash
 composer require gesagtgetan/cookiedialogue --no-update
+```
+
+To install the package under Neos 8.\* you have to enter
+
+```bash
+composer require "gesagtgetan/cookiedialogue:^4.7" --no-update
 ```
 
 To install the package under Neos 3.\* you have to enter
@@ -56,13 +63,14 @@ prototype(Your.Package:DocumentNodeType) {
 
 ## Interact
 
-The event ``ggCookieDialogClosed`` is fired whenever the dialog is accepted. This can happen through manual user interaction
+The event `ggCookieDialogClosed` is fired whenever the dialog is accepted. This can happen through manual user interaction
 by clicking the button, but also happens on each page load when the dialog has been accepted before and is therefor closed
 automatically.
 
 Example usage:
+
 ```js
-document.addEventListener('ggCookieDialogClosed', function() {
+document.addEventListener("ggCookieDialogClosed", function () {
     // this code is only executed after the dialog has been accepted at least once
 });
 ```

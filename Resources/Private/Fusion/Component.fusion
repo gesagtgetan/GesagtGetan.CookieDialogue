@@ -1,5 +1,5 @@
 prototype(GesagtGetan.CookieDialogue:Component) < prototype(Neos.Fusion:Component) {
-    @if.onlyInFrontend = ${node.context.live}
+    @if.onlyInFrontend = ${!renderingMode.isEdit && !renderingMode.isPreview}
 
     javascript = ${Configuration.setting('GesagtGetan.CookieDialogue.javascript')}
     css = ${Configuration.setting('GesagtGetan.CookieDialogue.css')}
@@ -37,7 +37,7 @@ prototype(GesagtGetan.CookieDialogue:Component) < prototype(Neos.Fusion:Componen
         style = Neos.Fusion:Tag {
             @if.render = ${props.css.include}
             tagName = 'style'
-            content = Neos.Fusion:Array {
+            content = Neos.Fusion:Join {
                 mainOpen = '.cookie-dialogue{'
                 mainBasic = ${props.flex + props.alignCenter + props.userSelect + 'left:0;right:0;line-height:1.4;padding:1em 0 0;position:fixed;transition:transform .5s cubic-bezier(.165,.84,.44,1);z-index:10050;'}
                 mainPosition = ${props.position + ':0;transform:translateY(' + (props.position == 'top' ? '-' : '') + '110%);'}
@@ -88,7 +88,7 @@ prototype(GesagtGetan.CookieDialogue:Component) < prototype(Neos.Fusion:Componen
         maximumLifetime = 0
         entryIdentifier{
             cookiedialogue = 'cookiedialogue'
-            node = ${site}
+            node = ${Neos.Caching.entryIdentifierForNode(site)}
         }
         entryTags {
             1 = ${Neos.Caching.nodeTag(site)}
